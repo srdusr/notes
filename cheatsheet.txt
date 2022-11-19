@@ -1,8 +1,0 @@
-
-
-## kitty dynamic opacity shortcuts
-#    Increase background opacity ctrl+shift+a>m
-#    Decrease background opacity ctrl+shift+a>l
-#    Full background opacity ctrl+shift+a>1
-#    Reset background opacity ctrl+shift+a>d
-
