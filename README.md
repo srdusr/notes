@@ -1,6 +1,8 @@
 # Notes
 My personal notes on various topics related to Computer Science and Tech, for incase I forget and available to anyone else who may find some use/valuable information. Also includes cheat sheets, guides, my blog posts and etc...
 
+
+"Write for another person because future you is another person." - Unknown
 ## Available notes:
 ```
 ├── cheatsheets
