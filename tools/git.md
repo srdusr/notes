@@ -49,5 +49,5 @@ git commit -m <file>
 ```
 Push the changes/commits to our repo.
 ```bash
-git push -u main
+git push -u origin main
 ```
