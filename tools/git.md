@@ -1,4 +1,4 @@
-## Dotfiles
+### Dotfiles
 - Intialize git and create a folder named ~/.cfg
 ```bash
 git init --bare $HOME/.cfg
@@ -27,3 +27,27 @@ config push
 config submodule add https://github.com/user/repo.git .path/to/repo  
 
 config submodule update --remote --merge
+
+- - -
+
+### Basic commands
+Intialize a git repository in the root of the folder.
+```bash
+git init
+```
+See which files git knows exist.
+```bash
+git status
+```
+Add a new file to the repo.
+```bash
+git add <file>
+```
+Create a commit with a message about the commit.
+```bash
+git commit -m <file>
+```
+Push the changes/commits to our repo.
+```bash
+git push -u main
+```
