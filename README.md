@@ -21,6 +21,7 @@ information. Also includes cheat sheets, guides, my blog posts and etc...
 │   ├── java.md #TODO: Still in progress
 │   ├── javascript.md #TODO: Still in progress
 │   ├── lua.md #TODO: Still in progress
+│   ├── markdown.md
 │   ├── python.md #TODO: Still in progress
 │   ├── rust.md #TODO: Still in progress
 │   └── sql.md #TODO: Still in progress
