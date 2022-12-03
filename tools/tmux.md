@@ -308,6 +308,9 @@ set-window-option -g mode-keys vi
 
 * Enable mouse mode  
 `:set mouse on`  
+
+* Show time  
+`<prefix> t`
 - - -
 
 #### HELP  
