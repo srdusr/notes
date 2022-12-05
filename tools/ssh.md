@@ -32,3 +32,37 @@
 
 * To view the log output from the server process.  
 `logcat -s 'syslog:*'`  
+
+# Locking and unlocking the file system from read-only to read-write and vice-versa.
+# How to copy files to an Android emulator’s data directory with ‘adb push’ 
+mount -o rw,remount rootfs /
+
+# Revert the changes back after finishing the changes!
+cat /proc/mounts
+mount -o ro,remount rootfs /
+
+
+#1 Copy single file from local to remote using scp.
+$ scp myfile.txt remoteuser@remoteserver:/remote/folder/
+
+#2 scp from remote to local using a single file .
+$ scp remoteuser@remoteserver:/remote/folder/remotefile.txt  localfile.txt
+
+
+
+
+Copy multiple files from remote to local:
+
+$ scp your_username@remote.edu:/some/remote/directory/\{a,b,c\} ./
+
+Copy multiple files from local to remote:
+
+$ scp foo.txt bar.txt your_username@remotehost.edu:~
+$ scp {foo,bar}.txt your_username@remotehost.edu:~
+$ scp *.txt your_username@remotehost.edu:~
+
+Copy multiple files from remote to remote:
+
+$ scp your_username@remote1.edu:/some/remote/directory/foobar.txt \
+
+
