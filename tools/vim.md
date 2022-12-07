@@ -33,7 +33,8 @@ or
     :sb#
     :vert sb#
 
-* Search and Replace, The :substitute command searches for a text pattern, and replaces it with a text string. There are many options, but these are what you probably want:
+* Search and Replace, The :substitute command searches for a text pattern, and replaces it with a text string. There are many options, but these are what you probably want:  
+```
     :s/foo/bar/g
         # Find each occurrence of 'foo' (in the current line only), and replace it with 'bar'.
     :%s/foo/bar/g
@@ -48,14 +49,14 @@ or
         # This may be wanted after using :set noignorecase to make searches case sensitive (the default).
     :%s/foo/bar/gcI
         # Change each 'foo' (case sensitive due to the I flag) to 'bar'; ask for confirmation.
-
+```
 * Create a new file named filename in the same directory as the currently open file, and write it.
     :e %:h/filename
 
 
 * VIM KEYBOARD SHORTCUTS
 
-*** MOVEMENT
+* MOVEMENT
 ```
 h        -   Move left
 j        -   Move down
