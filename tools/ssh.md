@@ -34,8 +34,17 @@
 `logcat -s 'syslog:*'`  
 
 
+#### Copying files  
+##### (SCP Secure Copy Protocol)  
+- Syntax:  
+```bash
+scp [OPTIONS] [[user@]src_host:]file1 [[user@]dest_host:]file2
+```
+```bash
+scp file <remote_username>@<IPorHost>:<PathToFile>   <LocalFileLocation>
+```
 
-#### Copying files
+How to SSH File Transfer from Remote to Local
 1. Copy single file from local to remote using scp.  
 $ `scp myfile.txt remoteuser@remoteserver:/remote/folder/`  
 
