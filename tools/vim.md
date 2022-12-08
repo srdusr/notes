@@ -1,62 +1,7 @@
-* Copy text from (n)vim to 
-```
-* linux:
-  :w !xclip -sel c # copy the whole file
-  $ xclip -o sel -c # paste from the clipboard
-or 
-  :w !xsel -b # copy the whole file
-  $ xsel -o -b # paste from the clipboard
--- Note: In case neither of these tools (xsel and xclip) are preinstalled on your distro, you can probably find them in the repos
-* macos:
-  :%w !pbcopy # copy the whole file 
-  :r !pbpaste # paste from the clipboard 
-```
-* To open the current window in a new tab (maximize) with the cursor in the same place, enter
-    :tab sp or <Ctrl-w>T
-        # which splits the current window into a new tab.
 
-* To close the current window, press
-    <Ctrl-w>c
-        # That will close the newly opened tab.
+#### Vim Keyboard Shortcuts
 
-* To make a file executable
-    :! chmod +x %
-
-* Shortcut command to backup current file
-    :!cp % %.backup
-
-* Use hjkl... at vim's command history mode by using <C-f> or even go straight into it with <q:>
-    :<C-f>
-        # can exit by pressing <enter>
-
-* Split existing buffer into a horizontal/vertical window
-    :sb#
-    :vert sb#
-
-* Search and Replace, The :substitute command searches for a text pattern, and replaces it with a text string. There are many options, but these are what you probably want:  
-```
-    :s/foo/bar/g
-        # Find each occurrence of 'foo' (in the current line only), and replace it with 'bar'.
-    :%s/foo/bar/g
-        # Find each occurrence of 'foo' (in all lines), and replace it with 'bar'.
-    :%s/foo/bar/gc
-        # Change each 'foo' to 'bar', but ask for confirmation first.
-    :%s/\<foo\>/bar/gc
-        # Change only whole words exactly matching 'foo' to 'bar'; ask for confirmation.
-    :%s/foo/bar/gci
-        # Change each 'foo' (case insensitive due to the i flag) to 'bar'; ask for confirmation.
-    :%s/foo\c/bar/gc is the same because \c makes the search case insensitive.
-        # This may be wanted after using :set noignorecase to make searches case sensitive (the default).
-    :%s/foo/bar/gcI
-        # Change each 'foo' (case sensitive due to the I flag) to 'bar'; ask for confirmation.
-```
-* Create a new file named filename in the same directory as the currently open file, and write it.
-    :e %:h/filename
-
-
-* VIM KEYBOARD SHORTCUTS
-
-* MOVEMENT
+* Movement
 ```
 h        -   Move left
 j        -   Move down
@@ -113,6 +58,22 @@ cc       -   Delete current line and enter insert mode (unlike dd which leaves y
 C        -   Delete (change) from cursor to end of line, and enter insert mode
 ```
 
+* VISUAL MODE
+```
+v        -   Enter visual mode and highlight characters
+V        -   Enter visual mode and highlight lines
+CTRL+v   -   Enter visual block mode and highlight exactly where the cursor moves
+o        -   Switch cursor from first & last character of highlighted block while in visual mode
+~        -   Swap case under selection
+<<       -   Shift lines to left
+>>       -   Shift lines to right
+
+vat      -   Highlight all text up to and including the parent element
+vit      -   Highlight all text up to the parent element, excluding the element
+vac      -   Highlight all text including the pair marked with c (like va<, va' or va")
+vic      -   Highlight all text inside the pair marked with c
+```
+
 * Deletion
 ```
 x        -   Delete character forward (under cursor). use x do delete backwards (before cursor)
@@ -134,22 +95,6 @@ y$       -   Yank till the end of the line
 P        -   Put yanked text above current line
 J        -   Join current line with the next line. Use gJ to exclude join-position space
 xp       -   Transpose two letters (delete and paste, technically)
-```
-
-* VISUAL MODE
-```
-v        -   Enter visual mode and highlight characters
-V        -   Enter visual mode and highlight lines
-CTRL+v   -   Enter visual block mode and highlight exactly where the cursor moves
-o        -   Switch cursor from first & last character of highlighted block while in visual mode
-~        -   Swap case under selection
-<<       -   Shift lines to left
->>       -   Shift lines to right
-
-vat      -   Highlight all text up to and including the parent element
-vit      -   Highlight all text up to the parent element, excluding the element
-vac      -   Highlight all text including the pair marked with c (like va<, va' or va")
-vic      -   Highlight all text inside the pair marked with c
 ```
 
 * Marking
@@ -219,27 +164,9 @@ CTRL+X   -   Decrement the number at cursor
 .        -   Repeat last change or delete
 ;        -   Repeat last f, t, F, or T command
 ,        -   Repeat last f, t, F, or T command in opposite direction
-
-vim +10 <file_name>            - opens the file at line 10
-vim +/bash cronjob-lab.yml     - opens the file cronjob-lab.yml on the first occurence of bash
-
-vim scp://balasundaramm@mgmt-bst:22/~/automation/test-file.txt - Edit a remote file via scp
 ```
-
-* History/Command buffer
-```
-q:              -   list history in command buffer
-q/              -   search history in command buffer
-CTRL+c CTRL+c   -   close the command buffer
-
-:set list       -   show hidden characters
-
-gg=G            -   Format HTML. Make sure FileType is set to html with :setf html
-CTRL+n          -   Press after typing part of a word. It scrolls down the list of all previously used words
-CTRL+p          -   Press after typing part of a word. It scrolls up the list of all previously used words
-```
-
-* Buffers
+- - -
+#### Buffers
 ```
 :ls (or :buffers)   -   list / show available buffers
 :e filename         -   Edit a file in a new buffer
@@ -256,35 +183,8 @@ CTRL+p          -   Press after typing part of a word. It scrolls up the list of
 :r !<command>       -   reads the output of the command into buffer
 :.! cat <file_path> -   reads the output of the command (eg: cat) into buffer or !! in ex-mode
 ```
-
-* Tab Views
-```
-:tabe filename      -   opens the file in newtab
-:tabe new           -   open an empty tab
-:tabs               -   list opened tabs
-:tabc               -   close the active tab
-:tabn and tabp      -   Go to next tab or previous tab
-:tabfirst           -   Go to the first available tab
-:tablast            -   Go to the last available tab
-:help tabpage       -   help for tabs
-
-vim -p *.txt        -   open all txt files in tabs
-```
-
-* Tab navigation
-```
-gt                  -   go to next tab
-gT                  -   go to previous tab
-{i}gt               -   go to tab in position i
-```
-
-* Tab shortcuts
-```
-CTRL+W T            -   Break out current window into a new tabview
-CTRL+W o            -   Close every window in the current tabview but the current one
-CTRL+W n            -   create a new window in the current tabview
-CTRL+W c            -   Close current window in the current tabview
-```
+- - -
+#### Windows
 
 * Window management
 ```
@@ -311,7 +211,6 @@ vim -O file1 file2
 :windo diffthis -  diff between 2 vsplit windows
 :diffs, diffsplit {filename} - diffs the current window with the file given
 :diffoff  - turns off diff selection
-
 
 CTRL+w s       -   Split current window horizontally
 CTRL+w v       -   Split current window vertically
@@ -361,34 +260,109 @@ CTRL+w <       -   Incrementally increase the window to the left. Takes a parame
 CTRL+w -       -   Incrementally decrease the window's height. Takes a parameter, e.g. CTRL-w 10 -
 CTRL+w +       -   Incrementally increase the window's height. Takes a parameter, e.g. CTRL-w 10 +
 ```
+- - -
+#### Tabs
+```
+:tabe filename      -   opens the file in newtab
+:tabe new           -   open an empty tab
+:tabs               -   list opened tabs
+:tabc               -   close the active tab
+:tabn and tabp      -   Go to next tab or previous tab
+:tabfirst           -   Go to the first available tab
+:tablast            -   Go to the last available tab
+:help tabpage       -   help for tabs
 
-* Comment lines (Tcomment plugin)
-```
-CTRL+_ CTRL+_   -   Comment a line using tcomment
-CTRL+V          -   #{Select the block before commenting a block,
-CTRL+_ CTRL+_   -   Comment a block of line using tcomment}
+vim -p *.txt        -   open all txt files in tabs
 ```
 
-* Modeline magic
+* Tab navigation
 ```
-:set modeline  -    Enable modeline magic or add this option to your .vimrc
-\ml            -    write the modeline based on your settings to the file
+gt                  -   go to next tab
+gT                  -   go to previous tab
+{i}gt               -   go to tab in position i
 ```
 
-* NERDTree Plugin
+* Tab shortcuts
 ```
-CTRL-n              -   Toggle
+CTRL+W T            -   Break out current window into a new tabview
+CTRL+W o            -   Close every window in the current tabview but the current one
+CTRL+W n            -   create a new window in the current tabview
+CTRL+W c            -   Close current window in the current tabview
+```
+- - -
 
-m                   -   opens the  menu
-?                   -   help
-i                   -   horizontal split
-s                   -   vertical split
-CTRL-w + <-|->      -  (left or right) to navigate
-```
-*** PERMISSION OVERRIDE ***
+#### Search & Replace
+
+The `:substitute` command searches for a text pattern, and replaces it with a text string. There are many options, but these are probably what we want:  
+* Find each occurrence of 'foo' (in the current line only), and replace it with 'bar'  
+    \: `s/foo/bar/g`  
+* Find each occurrence of 'foo' (in all lines), and replace it with 'bar'  
+    \: `%s/foo/bar/g`  
+* Change each 'foo' to 'bar', but ask for confirmation first  
+    \: `%s/foo/bar/gc`  
+* Change only whole words exactly matching 'foo' to 'bar'; ask for confirmation  
+    \: `%s/\<foo\>/bar/gc`  
+* Change each 'foo' (case insensitive due to the i flag) to 'bar'; ask for confirmation  
+    \: `%s/foo/bar/gci`  
+* This may be wanted after using :set noignorecase to make searches case sensitive (the default)  
+    \: `%s/foo\c/bar/gc` is the same because \c makes the search case insensitive.
+* Change each 'foo' (case sensitive due to the I flag) to 'bar'; ask for confirmation  
+    \: `%s/foo/bar/gcI`  
+- - -
+
+* Permission override
 ```
 :w !sudo tee %            -    Allows to override the permission of the written file
 :w !sudo sh -c "cat > %"  -             "                            "
 
 ```
+
+* Create a new file named filename in the same directory as the currently open file, and write it.  
+    \: `e %:h/filename`  
+
+* Copy text from (n)vim to other applications
+```bash
+* linux:
+  :w !xclip -sel c # copy the whole file
+  $ xclip -o sel -c # paste from the clipboard
+or 
+  :w !xsel -b # copy the whole file
+  $ xsel -o -b # paste from the clipboard
+-- Note: In case neither of these tools (xsel and xclip) are preinstalled on your distro, you can probably find them in the repos
+* macos:
+  :%w !pbcopy # copy the whole file 
+  :r !pbpaste # paste from the clipboard 
+```
+
+* To open the current window in a new tab (maximize) with the cursor in the same place, enter  
+    \: `tab sp` # splits the current window into a new tab  
+     or  
+    `<Ctrl-w>T`  
+* To close the current window, press  
+    `<Ctrl-w>c`  
+
+* To make a file executable  
+    \: `! chmod +x %`  
+
+* Shortcut command to backup current file  
+    \: `!cp % %.backup`  
+
+* Use hjkl... at vim's command history mode by using `<C-f>` or immediatly go
+  into history mode `q:` and exit by pressing `<enter>`
+
+* Split existing buffer into a horizontal/vertical window  
+    \: `sb` # horizontal  
+    \: `vert sb` # vertical  
+    \: `sb<n>` # where n is a specific buffer number
+- - -
+
+
+vim +10 <file_name>            - opens the file at line 10
+vim +/bash cronjob-lab.yml     - opens the file cronjob-lab.yml on the first occurence of bash
+
+vim scp://balasundaramm@mgmt-bst:22/~/automation/test-file.txt - Edit a remote file via scp
+
+gg=G            -   Format HTML. Make sure FileType is set to html with :setf html
+CTRL+n          -   Press after typing part of a word. It scrolls down the list of all previously used words
+CTRL+p          -   Press after typing part of a word. It scrolls up the list of all previously used words
 
