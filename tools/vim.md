@@ -57,7 +57,6 @@ cm       -   Delete (change) the character or word (w) in motion m, then enter i
 cc       -   Delete current line and enter insert mode (unlike dd which leaves you in normal mode)
 C        -   Delete (change) from cursor to end of line, and enter insert mode
 ```
-
 * VISUAL MODE
 ```
 v        -   Enter visual mode and highlight characters
