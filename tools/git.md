@@ -1,22 +1,23 @@
 ### Dotfiles
-- Intialize git and create a folder named ~/.cfg
+- Creating a dotfile git repo  
+1. Intialize git and create a folder named ~/.cfg
 ```bash
 git init --bare $HOME/.cfg
 ```
-- Put this in your .bashrc or .zsh to use `config` as a dotfiles alias.  
+2. Put this in your .bashrc or .zsh to use `config` as a dotfiles alias.  
 ```bash
   alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 ```
 
-- Make sure to ignore the folder we're going use to clone.  
+3. Make sure to ignore the folder we're going use to clone.  
 ```bash
 echo ".cfg" >> .gitignore
 ```
-- Set flag to not show untracked files  
+4. Set flag to not show untracked files  
 ```bash
 config config --local status.showUntrackedFiles no
 ```
-- Replacing git with our newly created config alias we can version control our
+5. Replacing git with our newly created config alias we can version control our
   dotfiles.
 ```bash
 config status
@@ -24,6 +25,7 @@ config add .bashrc
 config commit -m "Added bashrc"
 config push
 ```
+
 config submodule add https://github.com/user/repo.git .path/to/repo  
 
 config submodule update --remote --merge
