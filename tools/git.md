@@ -46,12 +46,19 @@
   ```bash
   config checkout
   ```
-- - -
-
-config submodule add https://github.com/user/repo.git .path/to/repo  
-
-config submodule update --remote --merge
-
+#### Use submodules to sync other repos into dotfiles  
+1. Add a submodule to dotfiles  
+```bash
+config submodule add https://github.com/user/dotfiles.git .path/to/dotfiles  
+```
+2. Update submodules to sync to dotfiles  
+```bash
+config submodule update --init --recursive  
+```
+3. Config push  
+```bash  
+config push  
+```
 - - -
 
 ### Basic commands
