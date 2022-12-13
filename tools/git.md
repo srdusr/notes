@@ -1,5 +1,5 @@
-### Dotfiles
-- Creating a dotfile git repo  
+## Dotfiles
+#### Creating a dotfile git repo  
   1. Intialize git and create a folder named ~/.cfg
   ```bash
   git init --bare $HOME/.cfg
@@ -25,7 +25,7 @@
   config commit -m "Added bashrc"
   config push
   ```
-- Installing onto a new system  
+#### Installing onto a new system  
   1. Avoid weird behaviour/recursion issues when .cfg tries to track itself  
   ```bash
   echo ".cfg" >> .gitignore
@@ -46,6 +46,7 @@
   ```bash
   config checkout
   ```
+- - -
 
 config submodule add https://github.com/user/repo.git .path/to/repo  
 
