@@ -69,24 +69,37 @@
 - - -
 
 ## Basic commands
-Intialize a git repository in the root of the folder.
+Intialize a git repository in the root of the folder:
 ```bash
 $ git init
 ```
-See which files git knows exist.
+See which files git knows exist:
 ```bash
 $ git status
 ```
-Add a new file to the repo.
+Add a new file to the repo:
 ```bash
 $ git add <file>
 ```
-Create a commit with a message about the commit.
+Create a commit with a message about the commit:
 ```bash
 $ git commit -m <file>
 ```
-Push the changes/commits to our repo.
+Push the changes/commits to a repo:
 ```bash
 $ git push -u origin main
+```
+Delete the most recent commit, keeping the work you've done:
+```bash
+$ git reset --soft origin/main
+```
+Delete the most recent commit, destroying the work you've done:
+```bash
+$ git reset --hard origin/main
+```
+Allow unrelated histories when two unrelated projects are merged/unaware of each
+other's existence:
+```bash
+$ git pull origin main --allow-unrelated-histories
 ```
 - - -
