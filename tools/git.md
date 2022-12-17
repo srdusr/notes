@@ -49,20 +49,24 @@
 #### Use git subtree to sync other repos into dotfiles  
   1. First make sure dotfiles is up-to date or commit/push/reset all changes
   otherwise this error message will show:  `Working tree has modifications.  Cannot add.`  
+  Also NOTE: the prefix (subdirectory in which you will add the subtree) cannot already exist therefore delete/backup locally.
 
-  2. Add the repo's file path and it's remote url  
+
+  2. Add the repo's file path and it's remote url:  
+NOTE: use the `--squash` flag to omit storing of entire history of subproject into main repo
   ```bash  
-  $ config subtree add --prefix /path/to/file <remote-git-repo-url> main --squash  
+  $ config subtree add --prefix /path/to/file <remote-git-repo-url> <branch> --squash  
   # Example:  
   $ config subtree add --prefix .config/nvim https://github.com/srdusr/nvim.git main --squash  
   ```  
+  
 
-  3. Update to sync/show any changes into dotfiles (upstream repo)  
+  3. Update to sync/show any changes into dotfiles (upstream repo):  
   ```bash
   $ config git subtree pull --prefix /path/to/file <remote-git-repo-url> main --squash  
   ```
 
-  4. Finally push onto remote repository  
+  4. Finally push onto remote repository:  
   ```bash  
   $ config push  
   ```
@@ -85,21 +89,21 @@ Create a commit with a message about the commit:
 ```bash
 $ git commit -m <file>
 ```
-Push the changes/commits to a repo:
+Push the changes/commits onto repo:
 ```bash
-$ git push -u origin main
+$ git push -u origin <branch>
 ```
 Delete the most recent commit, keeping the work you've done:
 ```bash
-$ git reset --soft origin/main
+$ git reset --soft origin/<branch>
 ```
 Delete the most recent commit, destroying the work you've done:
 ```bash
-$ git reset --hard origin/main
+$ git reset --hard origin/<branch>
 ```
 Allow unrelated histories when two unrelated projects are merged/unaware of each
 other's existence:
 ```bash
-$ git pull origin main --allow-unrelated-histories
+$ git pull origin <branch> --allow-unrelated-histories
 ```
 - - -
