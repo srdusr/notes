@@ -46,22 +46,29 @@
   ```bash
   $ config checkout
   ```
-#### Use submodules to sync other repos into dotfiles  
-  1. Add a submodule to dotfiles  
+#### Use git subtree to sync other repos into dotfiles  
+  1. First make sure dotfiles is up-to date or commit/push/reset all changes
+  otherwise this error message will show:  `Working tree has modifications.  Cannot add.`  
+
+  2. Add the repo's file path and it's remote url  
+  ```bash  
+  $ config subtree add --prefix /path/to/file <remote-git-repo-url> main --squash  
+  # Example:  
+  $ config subtree add --prefix .config/nvim https://github.com/srdusr/nvim.git main --squash  
+  ```  
+
+  3. Update to sync/show any changes into dotfiles (upstream repo)  
   ```bash
-  $ config submodule add https://github.com/user/dotfiles.git .path/to/dotfiles  
+  $ config git subtree pull --prefix /path/to/file <remote-git-repo-url> main --squash  
   ```
-  2. Update submodules to sync to dotfiles  
-  ```bash
-  $ config submodule update --init --recursive  
-  ```
-  3. Config push  
+
+  4. Finally push onto remote repository  
   ```bash  
   $ config push  
   ```
 - - -
 
-### Basic commands
+## Basic commands
 Intialize a git repository in the root of the folder.
 ```bash
 $ git init
@@ -82,3 +89,4 @@ Push the changes/commits to our repo.
 ```bash
 $ git push -u origin main
 ```
+- - -
