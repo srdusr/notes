@@ -70,6 +70,15 @@ NOTE: use the `--squash` flag to omit storing of entire history of subproject in
   ```bash  
   $ config push  
   ```
+  5. Optional aliases to put into .gitconfig:  
+  ```bash  
+  [alias]   
+    sba ="!f() { git subtree add --prefix $2 $1 main --squash; }; f"  
+    sbu ="!f() { git subtree pull --prefix $2 $1 main --squash; }; f"  
+  # Example:  
+  $ config sbu https://github.com/srdusr/nvim.git .config/nvim  
+  ```
+
 - - -
 
 ## Basic commands
