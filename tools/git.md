@@ -49,6 +49,9 @@
 #### Use git subtree to sync other repos into dotfiles  
   1. First make sure dotfiles is up-to date or commit/push/reset all changes
   otherwise this error message will show:  `Working tree has modifications.  Cannot add.`  
+  ```bash
+  $ config reset --hard origin/main
+  ```
   Also NOTE: the prefix (subdirectory in which you will add the subtree) cannot already exist therefore delete/backup locally.
 
 
@@ -102,13 +105,14 @@ Push the changes/commits onto repo:
 ```bash
 $ git push -u origin <branch>
 ```
+Reset the local main branch to remote repository aka...  
+Delete the most recent commit, destroying the work you've done:
+```bash
+$ git reset --hard origin/main
+```
 Delete the most recent commit, keeping the work you've done:
 ```bash
 $ git reset --soft origin/<branch>
-```
-Delete the most recent commit, destroying the work you've done:
-```bash
-$ git reset --hard origin/<branch>
 ```
 Allow unrelated histories when two unrelated projects are merged/unaware of each
 other's existence:
