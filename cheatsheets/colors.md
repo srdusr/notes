@@ -1,4 +1,5 @@
 ### Colors Cheatsheet
+NOTE: colors may not show on some instances like Github, etc...
 |No.|Name |Hex |RGB |HSL |
 |---|---|---|---|---|
 |<font color=#000000>000| <font color=#000000>Black | <font color=#000000>#000000 | <font color=#000000>rgb(0,0,0) | <font color=#000000>hsl(0,0%,0%) |</font>  
