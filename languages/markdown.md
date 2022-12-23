@@ -33,6 +33,7 @@ To place emojis use two colons around the emoji's name `:joy:` :joy:
 
 <font color='#af00d7'>Add color to font by:</font>  
 `<font color='color'>`text`</font>`  
+NOTE: Can't show color text in Github.
 
 You might of noticed already the use of inline code being used like this ` `, we
 use backticks with "code/text" inbetween ` `` `
