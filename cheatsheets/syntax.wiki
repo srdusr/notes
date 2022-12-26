@@ -1,0 +1,104 @@
+﻿
+= Links =
+[[Link]] # Use double square brackets to make a link
+[[test/Link]] # Use '/' to make a path or a new directory with a link
+[[test/Link2|Description of link]] # Use | to give a description of a link to the right and the left side is the location
+
+= Headers = # Goes upto 6 levels
+== Header Level 2==
+=== Header Level 3===
+==== Header Level 4====
+===== Header Level 5=====
+====== Header Level 6======
+
+= Lists =
+- Bullet
+* Also Bullet
+1. Number
+2) Also Number
+a) Same idea
+B) And Again
+i) Roman numerials
+II) Also this
+# Finally this
+
+= Indenting =
+- this is level 1
+    ii) can make a child
+        c) great for making a hierachy
+            IV) and so on...
+
+= Definitions =
+singleTerm:: singleDefinition
+Term::
+:: Definition 1
+:: Definition 2
+
+= Toggleable list of todo items =
+* [X] Toggleable list item 
+ii) [ ] ^space to toggle anywhere on line
+    - [ ] right after making a list character you can press space then the keybinding
+    - [ ] 
+
+= Text Formatting =
+Regular
+*bold* # Use astretriks on either side
+_italic_ # Use underscores
+superScript^something in between karots^ # Doesn't really work in terminal, rather html
+subsScript,,same story as above,, # But with two commas
+
+{{{
+    Ignore
+        Formatting defined
+    by Syntax
+        can space/indent however you
+            want.
+}}}
+
+{{{go
+
+package main
+
+import (
+    "log"
+    "net/http"
+)
+
+func main() {
+
+}
+
+# Have to exit to show syntax highlighting
+
+}}}
+
+= Tables =
+| Text |       | *random* |    |      |
+|------|-------|----------|----|------|
+| go   | to    | end      | of | line |
+| and  | press | enter    |    |      |
+
+= Key Words =
+TODO, DONE, STARTED, FIXME, FIXED, XXX
+
+= Anchor = 
+[[#Tables]] # Anchor tag to file using '#' and square brackets, if no arguement then
+[[test#Tables|This is a description]]
+
+= Raw URLS =
+https://www.google.com
+mailto:fake@email.com 
+ftp:addressToFTP
+
+= External Files =
+file:[[~/path/to/file.mp4]]
+[[file:~/path/to/file.mp4|file.mp4]] # Use of a Description
+
+
+----
+= Misc =
+%% This is a comment and won't show up in HTML
+
+HR
+----
+
