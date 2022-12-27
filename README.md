@@ -9,6 +9,7 @@ My personal notes on various topics related to Computer Science and Tech, for in
 │    ├── cmus.md
 │    ├── colors.md
 │    ├── fzf.md
+│    ├── syntax.wiki
 │    └── zathura.md
 │
 ├── languages (C, Rust, etc...)
