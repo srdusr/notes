@@ -29,6 +29,8 @@ press space twice or `tab` and then enter `<CR>`
 
 `~~` ~~Use two tildes around text to make a stikethrough (cancel out)~~ `~~`
 
+`<u>` <u>Underline text with HTML's underline tags</u> `</u>`
+
 To place emojis use two colons around the emoji's name `:joy:` :joy:
 
 <font color='#af00d7'>Add color to font by:</font>  
