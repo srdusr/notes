@@ -28,7 +28,7 @@ My personal notes on various topics related to Computer Science and Tech, for in
 │
 ├── linux
 │   ├── arch-install.md (Arch Linux installation)
-│   └── linux-commands.md
+│   └── linux-commands.md (bash/zsh)
 │
 ├── network
 │   ├── 
@@ -43,6 +43,10 @@ My personal notes on various topics related to Computer Science and Tech, for in
 │   ├── tmux.md
 │   ├── ssh.md
 │   └── vim.md
+│
+├── windows
+│   ├── windows-commands.md (cmd)
+│   └── windows-shortcuts.md
 │
 └── virt (docker, kubernetes, VMs)
     ├── docker.md #TODO: Still in progress
