@@ -9,19 +9,14 @@ press space twice or `tab` and then enter `<CR>`
 - For an unordered list use a hyphen `-` to make a bullet.  
 * An asterisk `*` could also be used.  
 + Or a plus sign `+`  
-  - Indent by using 2 spaces or `Tab` or type html's `&nbsp;` / `&emsp;`  
+  - Indent by using 2 spaces or `Tab`  
     1. Depending on what level using a number (ordered list) `1.` ...  
     2. could have mixed results `2.`  
+&nbsp;1. To show a number first after indent use html's `&nbsp;` / `&emsp;` space symbols  
 
 - [ ] A task list can be created with `- [ ]`  
 
 - [x] And marked/ticked with `- [x]`  
-
-<ul>  
-  <li> 1, 2, 3 or any number in an unordered list use html: </li></ul>  
-
-`<ul>`  
-&emsp;`<li>` "number" `</li></ul>`  
 
 `*` *Use asterisks around text to make it italic* `*`
 
@@ -30,12 +25,12 @@ press space twice or `tab` and then enter `<CR>`
 `~~` ~~Use two tildes around text to make a stikethrough (cancel out)~~ `~~`
 
 `<u>` <u>Underline text with HTML's underline tags</u> `</u>`
+NOTE: Can't underline text with this method in some instances like Github.
 
 To place emojis use two colons around the emoji's name `:joy:` :joy:
 
-<font color='#af00d7'>Add color to font by:</font>  
-`<font color='color'>`text`</font>`  
-NOTE: Can't show color text in Github.
+<font color='#af00d7'>`<font color='color'>` Add color to font `</font>`</font>  
+NOTE: Can't show color text in some instances like Github.
 
 You might of noticed already the use of inline code being used like this ` `, we
 use backticks with "code/text" inbetween ` `` `
