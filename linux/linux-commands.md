@@ -24,4 +24,6 @@ NOTE: `.` can also be used but is limited
 #### Copying/Pasting Text  
 - Copy text/output into a file (useful if in putty/non graphical terminal emulator)  
   `$ <command> 2>&1 | tee output-file`  
+  or  
+  `$ echo "text" 2>&1 | tee output-file` # print text without executing a command  
 - - -
