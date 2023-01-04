@@ -27,3 +27,11 @@ NOTE: `.` can also be used but is limited
   or  
   `$ echo "text" 2>&1 | tee output-file` # print text without executing a command  
 - - -
+
+#### Getting information about a window  
+  - To get id, size, position, state, class, etc...  
+  `$ xwininfo`  
+  or  
+  `$ xdotool getwindowfocus getwindowgeometry` # just get size/position  
+- - -
+
