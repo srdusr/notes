@@ -44,13 +44,13 @@ My personal notes on various topics related to Computer Science and Tech, for in
 │   ├── ssh.md
 │   └── vim.md
 │
-├── windows
-│   ├── windows-commands.md (cmd)
-│   └── windows-shortcuts.md
+├── virt (docker, kubernetes, VMs)
+│   ├── docker.md #TODO: Still in progress
+│   ├── kubernetes.md #TODO: Still in progress
+│   └── vm.md
 │
-└── virt (docker, kubernetes, VMs)
-    ├── docker.md #TODO: Still in progress
-    ├── kubernetes.md #TODO: Still in progress
-    └── vm.md #TODO: Still in progress
+└── windows
+    ├── windows-commands.md (cmd)
+    └── windows-shortcuts.md
 ```
 
