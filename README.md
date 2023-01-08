@@ -6,6 +6,7 @@ My personal notes on various topics related to Computer Science and Tech, for in
 #### Available notes:
 ```bash
 ├── cheatsheets
+│    ├── ascii.md
 │    ├── cmus.md
 │    ├── colors.md
 │    ├── fzf.md
