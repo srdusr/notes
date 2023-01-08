@@ -66,7 +66,7 @@ NOTE: use the `--squash` flag to omit storing of entire history of subproject in
 
   3. Update to sync/show any changes into dotfiles (upstream repo):  
   ```bash
-  $ config git subtree pull --prefix /path/to/file <remote-git-repo-url> main --squash  
+  $ config subtree pull --prefix /path/to/file <remote-git-repo-url> main --squash  
   ```
 
   4. Finally push onto remote repository:  
