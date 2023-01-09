@@ -31,7 +31,8 @@ My personal notes on various topics related to Computer Science and Tech, for in
 ├── linux
 │   ├── arch-install.md (Arch Linux installation)
 │   ├── linux-commands.md (bash/zsh)
-│   └── linux-troubleshoot.md
+│   ├── linux-troubleshoot.md
+│   └── linux-lvm.md
 │
 ├── network
 │   ├── 
