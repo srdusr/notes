@@ -6,12 +6,12 @@ My personal notes on various topics related to Computer Science and Tech, for in
 #### Available notes:
 ```bash
 ├── cheatsheets
-│    ├── ascii.md
-│    ├── cmus.md
-│    ├── colors.md
-│    ├── fzf.md
-│    ├── syntax.wiki
-│    └── zathura.md
+│   ├── ascii.md
+│   ├── cmus.md
+│   ├── colors.md
+│   ├── fzf.md
+│   ├── syntax.wiki
+│   └── zathura.md
 │
 ├── languages (C, Rust, etc...)
 │   ├── c.md  #TODO: Still in progress
@@ -30,7 +30,9 @@ My personal notes on various topics related to Computer Science and Tech, for in
 ├── linux
 │   ├── arch-install.md (Arch Linux installation)
 │   ├── linux-commands.md (bash/zsh)
-│   └── linux-troubleshoot.md
+│   ├── linux-troubleshoot.md
+│   ├── lvm.md
+│   └── termux.md
 │
 ├── network
 │   ├── 
