@@ -33,10 +33,11 @@ To place emojis use two colons around the emoji's name `:joy:` :joy:
 NOTE: Can't show color text in some instances like Github.
 
 You might of noticed already the use of inline code being used like this ` `, we
-use backticks with "code/text" inbetween ` `` `
+use backticks with "code/text" inbetween ` `` `. We can also use HTML's keyboard input tag `<kbd>Ctrl</kbd>` to specifically show a keyboard button , example: <kbd>Ctrl</kbd>  
+
 
 ```
-  ```use 2 sets of three backticks to make a block of code```
+  ```Use 2 sets of three backticks to make a block of code```
 ```
 ```html
 <p>for specific language syntax highlighting (this is html btw)...</p>
