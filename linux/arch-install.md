@@ -58,7 +58,7 @@
     `# lsblk`  
 
     4.4. (Optional) Encrypt our main partition (sda2) using LUKS  
-    - Load dm-crypt and dm-mod kernal modules  
+    - Load dm-crypt and dm-mod kernel modules  
     `# modprobe dm_crypt`  
     `# modprobe dm_mod`  
     - Format the partition using cryptsetup  
@@ -103,27 +103,31 @@
 - Check changes and see if everything is correct  
     `# lsblk`  
 - Based on what system, UEFI or no-UEFI and if encrypted/LVM do one of these options:  
-  - If no-UEFI (legacy) system  
+  - **If no-UEFI (legacy) system**  
     - Without encryption  
         - Format boot partition to EXT4 filesystem  
         `# mkfs.ext4 /dev/sda1`  
-    > NOTE: Only have one root partition so just format it by itself  
+        > NOTE: Since only have one root partition just format it by itself.  
+      <hr style="border: 0.8 normal; width:100%;"></hr>  
     - With encryption  
         - Format boot partition to EXT4 filesystem  
         `# mkfs.ext4 /dev/sda1`
         - Format encrypted root partition to EXT4 filesystem  
         `# mkfs.ext4 /dev/mapper/<name-of-partition>`  
-  - If UEFI system  
+      <hr style="border: 0.8px normal; width:100%;"></hr>  
+  - **If UEFI system**  
     - Without encryption and LVM  
         - Format boot efi partition to FAT32 filesystem  
         `# mkfs.fat -F32 /dev/sda1`  
         - Format root partition to EXT4 filesystem  
         `# mkfs.ext4 /dev/sda2`  
+      <hr style="border: 0.8px normal; width:100%;"></hr>  
     - Encryption and without LVM  
         - Format boot efi partition to FAT32 filesystem  
         `# mkfs.fat -F32 /dev/sda1`  
         - Format root partition to EXT4 filesystem  
         `# mkfs.ext4 /dev/mapper/<name-of-partition>`  
+      <hr style="border: 0.8px normal; width:100%;"></hr>  
     - LVM and with/without encryption  
         - Format boot efi partition to FAT32 filesystem  
         `# mkfs.fat -F32 /dev/sda1`  
