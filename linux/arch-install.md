@@ -1,4 +1,4 @@
-### Arch Linux Installation with optional LUKS (encryption) and/or LVM (Logical Volume Management)  
+### Arch Linux Installation Guide with optional LUKS (encryption) and/or LVM (Logical Volume Management)  
 - - -
 1. Change keyboard layout (only applicable if not using a US keyboard)
 - Look for an appropriate keyboard layout  
@@ -25,7 +25,7 @@
     4.1. Get information on boot mode and current blocks  
     - Verify the boot mode, the below command must show the directory without error otherwise the system is not booted in UEFI mode  
     `# ls /sys/firmware/efi/efivars`  
-    > NOTE if no-UEFI (legacy) system we can skip `4.2.` but understand LVM requires it to function therefore must create a default linux filesystem in `4.3.` and also skip `4.6.`  
+    > NOTE if no-UEFI (legacy) system we can skip `4.2.` but understand LVM requires it to function therefore must create a default linux filesystem in `4.3.` and also skip `4.5.`  
   
     - List block devices to get the disk name (where disk device is), usually "/dev/sda", "/dev/vda", "/dev/nve0n1" or "/dev/mmcblk0" etc..  
     `# lsblk`  
@@ -73,16 +73,16 @@
     `# cryptsetup open /dev/sda2 <name-of-partition>`  
     - Enter passphrase  
 
-    4.5 Continuing with LVM  
+    4.5. Continuing with LVM  
     > NOTE: Only continue this step if using LVM, if encrypted use volume path `/dev/mapper/` aka "device mapper" instead of `/dev/sda2`
     - Create physical volumes (PV)  
     `# pvcreate /dev/sda2`  
     - or  
     `# pvcreate /dev/mapper/<name-of-partition>` # if encrypted  
-    - Create the volume group (VG) with the name `vg1` or any other appropriate name on the encrypted volume path  
-    > NOTE: From here onwards we'll also assume the volume group name is `vg1` and one must adjust it accordingly. Always make meaningful volume and volume group names.  
-
-    `# vgcreate vg1 /dev/sda2`  
+    - Create the volume group (VG) with a `<volume-group-name>` called `vg1` or any other appropriate name on the encrypted volume path  
+    > NOTE: From here onwards we'll also assume the `volume-group-name` is `vg1` and one must adjust it accordingly. Always make meaningful volume and volume group names.  
+    <!-- -->  
+    &emsp;&emsp;`# vgcreate vg1 /dev/sda2`  
     - or  
     `# vgcreate vg1 /dev/mapper/<name-of-partition>` # if encrypted  
     - Create logical volumes (LV) root, swap (optional) and home  
@@ -156,7 +156,7 @@
 `# lscpu`  
 - Install base packages  
 `# pacstrap /mnt base linux linux-firmware vim amd-ucode lvm2 man openssh tmux`  
-> NOTE: If LTS (long-term support) is desired replace linux with linux-lts. Omit linux-firmware if installing in a VM (virtual machine) or container. Replace vim with desired text-editor. Replace intel-ucode with amd-ucode if we have an amd processor. Omit lvm2 if not using LVM. The packages man, openssh and tmux are optional.  
+> NOTE: If LTS (long-term support) is desired replace `linux` with `linux-lts`. Omit `linux-firmware` if installing in a VM (virtual machine) or container. Replace `vim` with desired text-editor, example `nano`. Replace `amd-ucode` with `intel-ucode` if we have an intel processor. Omit `lvm2` if not using LVM. The packages `man`, `openssh` and `tmux` are optional.  
  - - -
 8. Move into installation  
 - First generate the fstab file (where mount points are stored) use `-U` or `-L` to define by UUID or labels respectively  
