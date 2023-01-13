@@ -16,6 +16,10 @@ My personal notes on various topics related to Computer Science and Tech, for in
 │   ├── termux.md
 │   └── zathura.md
 │
+├── compsci (Computer Science)
+│   ├── 
+│   └── 
+│
 ├── languages (C, Rust, etc...)
 │   ├── c.md  #TODO: Still in progress
 │   ├── css.md  #TODO: Still in progress
