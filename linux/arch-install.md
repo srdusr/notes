@@ -57,7 +57,7 @@
     - List block devices again to check the new partitions  
     `# lsblk`  
 
-    4.4. (Optional) Encrypt our main partition (sda2) using LUKS  
+    4.4. (Optional) Encrypt our main partition `sda2` using LUKS  
     - Load dm-crypt and dm-mod kernel modules  
     `# modprobe dm_crypt`  
     `# modprobe dm_mod`  
