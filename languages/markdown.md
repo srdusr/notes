@@ -78,10 +78,16 @@ _   underscore
 !   exclamation mark  
 ```
 
-Horizontal rules can be made with three or more hyphens, asterisks or underscores. Recommend using spaces inbetween.  
-
-`- - -`
+Horizontal Rule can be made with three or more hyphens, asterisks or underscores. Recommend using spaces inbetween `- - -`  
 - - -
+A partial horizontal rule can be made by using HTML's horizontal rule `<hr>` tags  
+```
+<hr style ="border: `n`px `color`; width:`n`%;"></hr>
+
+```
+Where \`n\` before px (pixels) is a decimal (example: 0.8px) and \`n\` in width is a percentage (example: 80%). \`color\` (example: normal | green)  
+<hr style="border: 0.8px normal; width:80%;"></hr>  
+
 | to | make | table |
 | --- | --- | --- |
 | use | three | hyphens |
