@@ -135,7 +135,7 @@ $ `tmux new -s mysession -n mywindow`
 * rotate window  
 `<prefix> Ctrl-o` 
 
-* Move cursor to next window  
+* Move(cycle) cursor to next window  
 `<prefix> o`  
 
 * Switch/select window by number  
