@@ -309,6 +309,37 @@ The `:substitute` command searches for a text pattern, and replaces it with a te
     \: `%s/foo/bar/gcI`  
 - - -
 
+#### Regex (Regular Expressions) aka regexp
+* Range of operation, line Addressing and Marks
+
+Specifier number | Description   
+---|---
+number | an absolute line number 
+. | the current line 
+$ | the last line in the file
+% | the whole file. The same as 1,$
+'t | position of mark "t"
+/pattern[/] | the next line where text "pattern" matches.
+?pattern[?] | the previous line where text "pattern" matches
+\ \/ | the next line where the previously used search pattern matches
+\ \? | the previous line where the previously used search pattern matches
+\ \& | the next line where the previously used substitute pattern matches
+
+* Quantifiers, Greedy and Non-Greedy
+
+Quantifier | Description
+---|---
+\* | matches 0 or more of the preceding characters, ranges or metacharacters .* matches everything including empty line
+\ \+ | matches 1 or more of the preceding characters...
+\ \= | matches 0 or 1 more of the preceding characters...
+\ \{n,m} | matches from n to m of the preceding characters...
+\ \{n} | matches exactly n times of the preceding characters...
+\ \{,m} | matches at most m (from 0 to m) of the preceding characters...
+\ \{n,} | matches at least n of of the preceding characters...
+| | where n and m are positive integers (>0) 
+
+- - -
+
 * Permission override
 ```
 :w !sudo tee %            -    Allows to override the permission of the written file
