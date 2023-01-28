@@ -1,10 +1,9 @@
 #### <u>Open Command Prompt</u>  
   1. `Windows+R` # open "Run" box  
   2. Type "cmd"  
-  - To open regular Command Prompt  
-  click "OK"
-  - To open an administrator Command Prompt  
-  press `Ctrl+Shift+Enter`  
+      - To open regular Command Prompt click "OK"  
+      or  
+      - To open an administrator Command Prompt press `Ctrl+Shift+Enter`  
 - - -
 
 #### <u>Check/Manage System</u>  
