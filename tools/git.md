@@ -120,3 +120,8 @@ other's existence:
 $ git pull origin <branch> --allow-unrelated-histories
 ```
 - - -
+#### Miscellaneous
+Find out size of a repo before cloning it  
+```bash
+$ curl -s https://api.github.com/repos/{orgname/username}/{repo_name} | jq '.size' | numfmt --to=iec --from-unit=1024
+```
