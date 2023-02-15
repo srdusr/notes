@@ -48,3 +48,4 @@ NOTE: `.` can also be used but is limited
   `$ xdotool getwindowfocus getwindowgeometry` # just get size/position  
 - - -
 
+
