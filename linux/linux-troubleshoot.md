@@ -9,3 +9,12 @@
   - Alternate to ifconfig, display network interfaces and configure network devices  
   - Interact with layers of TCP/IP protocol (Data link layer and Network layer)  
   - Can show and modify kernal routing tables (+/- ARP cache entries)  
+- - -
+#### Reload a program from tty if gui becomes unresponsive 
+  `$ DISPLAY=:<n> <name of program>`  
+  Example:  
+```
+  `$ DISPLAY=:0 xterm &`  
+  `$ DISPLAY=:0 sxhkd &`  
+```
+- - -
