@@ -56,9 +56,9 @@
 
 
   2. Add the repo's file path and it's remote url:  
-NOTE: use the `--squash` flag to omit storing of entire history of subproject into main repo
+NOTE: Can use the `--squash` flag to omit storing of entire history of subproject into main repo but if used then the flag will always have to be used with the given repo/subtree and it's commands
   ```bash  
-  $ config subtree add --prefix /path/to/file <remote-git-repo-url> <branch> --squash  
+  $ config subtree add --prefix /path/to/file <remote-git-repo-url> <branch>  
   # Example:  
   $ config subtree add --prefix .config/nvim https://github.com/srdusr/nvim.git main --squash  
   ```  
@@ -66,7 +66,7 @@ NOTE: use the `--squash` flag to omit storing of entire history of subproject in
 
   3. Update to sync/show any changes into dotfiles (upstream repo):  
   ```bash
-  $ config subtree pull --prefix /path/to/file <remote-git-repo-url> main --squash  
+  $ config subtree pull --prefix /path/to/file <remote-git-repo-url> main  
   ```
 
   4. Finally push onto remote repository:  
@@ -76,10 +76,13 @@ NOTE: use the `--squash` flag to omit storing of entire history of subproject in
   5. Optional aliases to put into .gitconfig:  
   ```bash  
   [alias]   
+    sba ="!f() { git subtree add --prefix $2 $1 main; }; f"  
+    sbu ="!f() { git subtree pull --prefix $2 $1 main; }; f"  
+    # Or use --squash if prefered
     sba ="!f() { git subtree add --prefix $2 $1 main --squash; }; f"  
     sbu ="!f() { git subtree pull --prefix $2 $1 main --squash; }; f"  
   # Example:  
-  $ config sbu https://github.com/srdusr/nvim.git .config/nvim  
+  $ config sbu https://github.com/srdusr/nvim.git .config/nvim #--squash  
   ```
 
 - - -
