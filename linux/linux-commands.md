@@ -39,6 +39,19 @@ NOTE: `.` can also be used but is limited
   $ ls -l /opt/myFile.txt  
   -rw-r--r-- 1 root root 0 Dec  21 16:20 /opt/file.txt  
   ```
+
+    `!!:n` where n is the 0-based position of the argument you want.
+The ! prefix is used to access previous commands.
+
+- Other useful commands:
+
+    `!$` - last argument from previous command  
+    `!^` - first argument (after the program/built-in/script) from previous command  
+    `!*` - all arguments from previous command  
+    `!!` - previous command (often pronounced "bang bang")  
+    `!n` - command number n from history  
+    `!pattern` - most recent command matching pattern  
+    `!!:s/find/replace` - last command, substitute find with replace  
 - - -
 
 #### Getting information about a window  
