@@ -66,3 +66,27 @@ unix_sock_rw_perms = "0770"
 - Restart libvirt daemon.
 `$ sudo systemctl restart libvirtd.service`
 - - -
+4. Enable Nested Virtualization (optional)
+`$ ### Intel Processor ###`
+`$ sudo modprobe -r kvm_intel`
+`$ sudo modprobe kvm_intel nested=1`
+
+`$ ### AMD Processor ###`
+`$ sudo modprobe -r kvm_amd`
+`$ sudo modprobe kvm_amd nested=1`
+- To make this configuration persistent, run:
+`$ echo "options kvm-intel nested=1" | sudo tee /etc/modprobe.d/kvm-intel.conf`
+- Confirm that Nested Virtualization is set to Yes:
+`$### Intel Processor ###`
+`$ systool -m kvm_intel -v | grep nested`
+    `nested              = "Y"`
+    `nested_early_check  = "N"`
+`$ cat /sys/module/kvm_intel/parameters/nested `
+`Y`
+
+`$### AMD Processor ###`
+`$ systool -m kvm_amd -v | grep nested`
+    `nested              = "Y"`
+    `nested_early_check  = "N"`
+`$ cat /sys/module/kvm_amd/parameters/nested`
+`Y`
