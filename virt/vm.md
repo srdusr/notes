@@ -29,3 +29,8 @@ vboxmanage modifyvm "win10" --accerlerate3d on
   ```bash
   $ VBoxManage modifyvm "Virtualbox name" --nested-hw-virt on
   ```
+- - -
+#### KVM  
+- - -
+
+- - -
