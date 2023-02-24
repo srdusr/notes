@@ -32,5 +32,18 @@ vboxmanage modifyvm "win10" --accerlerate3d on
 - - -
 #### KVM  
 - - -
-
+1. First install the following onto the host:
+| Program | Description |
+| --- | --- |
+| qemu ||
+| virt-manager ||
+| virt-viewer ||
+| dnsmasq ||
+| vde2 ||
+| bridge-utils ||
+| openbsd-netcat ||
+| ebtables ||
+| iptables ||
+| libguestfs ||
+- - -
 - - -
