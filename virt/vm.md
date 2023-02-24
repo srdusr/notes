@@ -51,3 +51,18 @@ vboxmanage modifyvm "win10" --accerlerate3d on
 `$ sudo systemctl enable libvirtd.service`
 `$ sudo systemctl start libvirtd.service`
 - - -
+3. Enable normal user (non-root) to use KVM
+`$ sudo vim /etc/libvirt/libvirtd.conf`
+- Set the UNIX domain socket group ownership to libvirt, (around line 85)
+unix_sock_group = "libvirt"
+
+- Set the UNIX socket permissions for the R/W socket (around line 102)
+unix_sock_rw_perms = "0770"
+
+- Add your user account to libvirt group.
+`$ sudo usermod -a -G libvirt $(whoami)`
+`$ newgrp libvirt`
+
+- Restart libvirt daemon.
+`$ sudo systemctl restart libvirtd.service`
+- - -
