@@ -30,8 +30,10 @@ vboxmanage modifyvm "win10" --accerlerate3d on
   $ VBoxManage modifyvm "Virtualbox name" --nested-hw-virt on
   ```
 - - -
-#### KVM  
+#### KVM (Kernel-based Virtual Machine)  
 - - -
+- KVM:  
+- QEMU:  
 1. First install the following onto the host:
 | Program | Description |
 | --- | --- |
