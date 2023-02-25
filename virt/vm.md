@@ -47,13 +47,19 @@ vboxmanage modifyvm "win10" --accerlerate3d on
 | ebtables ||
 | iptables ||
 | libguestfs ||
+
+| libvirt-bin ||
+| spice-vdagent ||
+| qemu-kvm ||
 - - -
-2. Start KVM libguestfs
+2. Before you continue, remember to enable virtualization (e.g. VT-x / AMD-V) in your BIOS / UEFI settings.
+- - -
+3. Start KVM libguestfs
 - On Arch based systems:
 `$ sudo systemctl enable libvirtd.service`
 `$ sudo systemctl start libvirtd.service`
 - - -
-3. Enable normal user (non-root) to use KVM
+4. Enable normal user (non-root) to use KVM
 `$ sudo vim /etc/libvirt/libvirtd.conf`
 - Set the UNIX domain socket group ownership to libvirt, (around line 85)
 unix_sock_group = "libvirt"
@@ -68,7 +74,7 @@ unix_sock_rw_perms = "0770"
 - Restart libvirt daemon.
 `$ sudo systemctl restart libvirtd.service`
 - - -
-4. Enable Nested Virtualization (optional)
+5. Enable Nested Virtualization (optional)
 `$ ### Intel Processor ###`
 `$ sudo modprobe -r kvm_intel`
 `$ sudo modprobe kvm_intel nested=1`
