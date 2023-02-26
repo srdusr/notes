@@ -60,7 +60,7 @@ vboxmanage modifyvm "win10" --accerlerate3d on
 - On Arch based systems:
 `$ sudo systemctl enable libvirtd.service`
 `$ sudo systemctl start libvirtd.service`
-`$ sudo systemctl status libvirtd` # Verify virtualization service is running  
+`$ sudo systemctl status libvirtd # Verify virtualization service is running`  
 - - -
 4. Enable normal user (non-root) to use KVM
 `$ sudo vim /etc/libvirt/libvirtd.conf`
