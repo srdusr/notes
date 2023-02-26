@@ -53,6 +53,8 @@ vboxmanage modifyvm "win10" --accerlerate3d on
 | qemu-kvm ||
 - - -
 2. Before you continue, remember to enable virtualization (e.g. VT-x / AMD-V) in your BIOS / UEFI settings.
+- Check CPU to see if we have support for vitualization  
+`$ grep -E --color '(vmx|svm)' /proc/cpuinfo`  
 - - -
 3. Start KVM libguestfs
 - On Arch based systems:
