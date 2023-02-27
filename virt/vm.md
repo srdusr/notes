@@ -38,6 +38,7 @@ vboxmanage modifyvm "win10" --accerlerate3d on
 | Program | Description |
 | --- | --- |
 | qemu ||
+| qemu-system-x86 ||
 | virt-manager ||
 | virt-viewer ||
 | dnsmasq ||
