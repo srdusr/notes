@@ -112,4 +112,5 @@ unix_sock_rw_perms = "0770"
 --cdrom=/tmp/debian-9.0.0-amd64-netinst.iso \
 --disk size=5 \
 --os-variant=debian8
-
+7. Start virt-manager (GUI option)
+`$ virt-manager`
