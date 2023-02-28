@@ -55,7 +55,7 @@ vboxmanage modifyvm "win10" --accerlerate3d on
 - - -
 2. Before you continue, remember to enable virtualization (e.g. VT-x / AMD-V) in your BIOS / UEFI settings.
 - Check CPU to see if we have support for vitualization  
-`$ grep -E --color '(vmx|svm)' /proc/cpuinfo # 'vmx' is for intel and 'svm' is for AMD`  
+`$ grep -E --color 'vmx|svm' /proc/cpuinfo # 'vmx' is for intel and 'svm' is for AMD`  
 - - -
 3. Start KVM libguestfs
 - On Arch based systems:
@@ -116,3 +116,5 @@ unix_sock_rw_perms = "0770"
 - - -
 7. Start virt-manager (GUI option)  
 `$ virt-manager`
+- - -
+###### Android x86:
