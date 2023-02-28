@@ -105,12 +105,14 @@ unix_sock_rw_perms = "0770"
     `nested_early_check  = "N"`
 `$ cat /sys/module/kvm_amd/parameters/nested`
 `Y`
-6. Create the new virtual machine via cli
+- - -
+6. Create the new virtual machine via cli  
 # virt-install --name=linuxconfig-vm \
 --vcpus=1 \
 --memory=1024 \
 --cdrom=/tmp/debian-9.0.0-amd64-netinst.iso \
 --disk size=5 \
 --os-variant=debian8
-7. Start virt-manager (GUI option)
+- - -
+7. Start virt-manager (GUI option)  
 `$ virt-manager`
