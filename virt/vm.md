@@ -118,3 +118,4 @@ unix_sock_rw_perms = "0770"
 `$ virt-manager`
 - - -
 ###### Android x86:
+1. Download latest ISO from android-x86.org
