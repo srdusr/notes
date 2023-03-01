@@ -10,7 +10,7 @@
 `$ nmcli -p device show`  
 ** Windows  
 `$ ipconfig`  
-> NOTE: The IP Address we use will usually be the one not similar 127.0.0.1 but rather a different string of numbers, ignore any forward slash and the numbers after it  
+> NOTE: The IP Address we use will usually be the one not similar to 127.0.0.1 but rather a different string of numbers, ignore any forward slash and the numbers after it  
 > Example:  
 > `$ ip addr show | grep "inet "`
 ```bash
