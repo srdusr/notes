@@ -1,4 +1,5 @@
 ### SSH (Secure Shell Protocol)  
+- A method for secure remote login from one computer to another
 
 * Find out your username  
 `$ whoami`  
