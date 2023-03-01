@@ -15,8 +15,8 @@
 > Example:  
 > `$ ip addr show | grep "inet "`
 ```bash
-> inet 127.0.0.1/8 scope host lo
-> inet <u>10.1.1.5</u>/27 brd 10.1.1.31 [...]
+ inet 127.0.0.1/8 scope host lo  
+ inet <u>10.1.1.5</u>/27 brd 10.1.1.31 [...]  
 ```
 > The `10.1.1.5` is what we want in this example  
 
