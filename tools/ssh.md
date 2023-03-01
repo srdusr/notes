@@ -19,6 +19,7 @@
 ```
 > The `10.1.1.5` is what we want in this example  
 
+* For Termux users:
 * Termux install openssh  
 `$ pkg in openssh`  
 
