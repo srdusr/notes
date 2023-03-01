@@ -1,38 +1,38 @@
 ### SSH (Secure Shell Protocol)  
 
 * Find out your username  
-`whoami`  
+`$ whoami`  
 
 * Check ip address  
-`ifconfig`  
-`nmcli -p device show`  
+`$ ifconfig`  
+`$ nmcli -p device show`  
 
 * Termux install openssh  
-`pkg in openssh`  
+`$ pkg in openssh`  
 
 * Termux make sure user/root password is set  
-`passwd <user> # root does not need to be specified`  
+`$ passwd <user> # root does not need to be specified`  
 
 * Generate your ssh key pair on remote host machine, not on server machine  
-`ssh-keygen`  
+`$ ssh-keygen`  
 
 * Accessing termux user environment from other consoles  
-`scp your_desktop_ssh_user@YOUR.DESKTOP.IP.ADDRESS:~/.ssh/id_rsa.pub ~/.ssh/authorized_keys`  
+`$ scp your_desktop_ssh_user@YOUR.DESKTOP.IP.ADDRESS:~/.ssh/id_rsa.pub ~/.ssh/authorized_keys`  
 
 * Second Option How do I add SSH Keys to authorized_keys file?  
-`cat ~/.ssh/id_rsa.pub | ssh your_desktop_ssh_user@YOUR.DESKTOP.IP.ADDRESS "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys"`  
+`$ cat ~/.ssh/id_rsa.pub | ssh your_desktop_ssh_user@YOUR.DESKTOP.IP.ADDRESS "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys"`  
 
 * Start server in machine that will ssh into  
-`sshd`  
+`$ sshd`  
 
 * Android remote host into desktop server, assuming default port 8022  
-`ssh your_desktop_ssh_user@YOUR.DESKTOP.IP.ADDRESS -p 8022`  
+`$ ssh your_desktop_ssh_user@YOUR.DESKTOP.IP.ADDRESS -p 8022`  
 
 * Desktop remote host into android server, assuming default port 8022  
-`ssh your_android_ssh_user@YOUR.ANDROID.IP.ADDRESS`  
+`$ ssh your_android_ssh_user@YOUR.ANDROID.IP.ADDRESS`  
 
 * To view the log output from the server process.  
-`logcat -s 'syslog:*'`  
+`$ logcat -s 'syslog:*'`  
 
 
 #### Copying files  
@@ -47,21 +47,21 @@ scp file <remote_username>@<IPorHost>:<PathToFile>   <LocalFileLocation>
 
 How to SSH File Transfer from Remote to Local
 1. Copy single file from local to remote using scp.  
-$ `scp myfile.txt remoteuser@remoteserver:/remote/folder/`  
+`$ scp myfile.txt remoteuser@remoteserver:/remote/folder/`  
 
 2. scp from remote to local using a single file.  
-$ `scp remoteuser@remoteserver:/remote/folder/remotefile.txt  localfile.txt`  
+`$ scp remoteuser@remoteserver:/remote/folder/remotefile.txt  localfile.txt`  
 
 * Copy multiple files from remote to local:  
-$ `scp your_username@remote.edu:/some/remote/directory/\{a,b,c\} ./`  
+`$ scp your_username@remote.edu:/some/remote/directory/\{a,b,c\} ./`  
 
 * Copy multiple files from local to remote:  
 
-  $ `scp foo.txt bar.txt your_username@remotehost.edu:~`  
-  $ `scp {foo,bar}.txt your_username@remotehost.edu:~`  
-  $ `scp *.txt your_username@remotehost.edu:~`  
+  `$ scp foo.txt bar.txt your_username@remotehost.edu:~`  
+  `$ scp {foo,bar}.txt your_username@remotehost.edu:~`  
+  `$ scp *.txt your_username@remotehost.edu:~`  
 
 * Copy multiple files from remote to remote:  
-  $ `scp your_username@remote1.edu:/some/remote/directory/foobar.txt \`
+  `$ scp your_username@remote1.edu:/some/remote/directory/foobar.txt \`
 
 
