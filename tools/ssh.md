@@ -4,8 +4,12 @@
 `$ whoami`  
 
 * Check ip address  
+** Linux  
+`$ ip addr show | grep "inet "`  
 `$ ifconfig`  
 `$ nmcli -p device show`  
+** Windows  
+`$ ipconfig`  
 
 * Termux install openssh  
 `$ pkg in openssh`  
