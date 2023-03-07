@@ -1,10 +1,10 @@
 ### Arch Linux Installation Guide with optional LUKS (encryption) and/or LVM (Logical Volume Management)  
 - - -
-1. Change keyboard layout (only applicable if not using a US keyboard)
-- Look for an appropriate keyboard layout  
-`# localectl list-keymaps | grep US`  
+1. Change keyboard layout (only applicable if not using a pc/laptop US keyboard)
+- Look for an appropriate keyboard layout example: `us`  
+`# localectl list-keymaps | grep <keymap>`  
 - Set the console keyboard layout  
-`# loadkeys en_US.UTF-8`  
+`# loadkeys us`
 - - -
 2. Connect to the internet  
 - Test internet connection  
