@@ -4,13 +4,28 @@
 - Look for an appropriate keyboard layout example: `us`  
 `# localectl list-keymaps | grep <keymap>`  
 - Set the console keyboard layout  
-`# loadkeys us`
+`# loadkeys us`  
 - - -
 2. Connect to the internet  
 - Test internet connection  
+`# ping archlinux.org`  
+or  
 `# ip a`  
-- Type the following command, press "enter" and select wifi and enter password  
-`# wifi-menu`  
+- If not sure what interfaces are available (wired connection/wifi), use:  
+`# ip link`  
+- If using a wired connection, it is usually picked up automatically  
+- If using wifi, it will require some additional setting up. Launch `iwctl` prompt:  
+`# iwctl`  
+- List available devices:  
+`[iwd]# device list` # Should see wifi available with a name like `wlan0`, adjust accordingly if necessary  
+- Scan for networks and list available Wi-Fi networks:  
+`[iwd]# station wlan0 scan` # This command outputs nothing  
+`[iwd]# station wlan0 get-networks`  
+- Connect to wifi network where `<wifi-name>` is the name of the device  
+`[iwd]# station wlan0 connect <wifi-name>`  
+- Enter the passphrase for wifi  
+- Exit the iwctl and don't forget to test the connection again  
+`[iwd]# exit`  
 - - -
 3. Sync system clock, mirrors and servers  
 - Update the system clock  
