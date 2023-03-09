@@ -117,5 +117,7 @@ unix_sock_rw_perms = "0770"
 7. Start virt-manager (GUI option)  
 `$ virt-manager`
 - - -
-###### Android x86:
+###### qemu-system-x86_64
+`$ sudo qemu-system-x86_64 -m 512 -enable-kvm -bios /usr/share/edk2-ovmf/x64/OVMF_CODE.fd -usb -device usb-host,hostbus=3,hostaddr=3`
+###### android-x86:
 1. Download latest ISO from android-x86.org
