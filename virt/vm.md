@@ -33,7 +33,7 @@ vboxmanage modifyvm "win10" --accerlerate3d on
 #### KVM (Kernel-based Virtual Machine)  
 - - -
 - KVM:  
-- QEMU:  
+- QEMU: A command-line tool to emulate/virtualize machines/OSs that interacts with other hypervisors such as KVM and can achieve near native performance by executing the guest code directly on the host CPU.  
 1. First install the following onto the host:
 | Program | Description |
 | --- | --- |
