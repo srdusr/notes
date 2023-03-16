@@ -33,6 +33,7 @@
 * Disconnect specific ssh clients off from server  
 1. First see who's logged into the the machine  
 `$ who` or `$ w`# if there is anything besides tty1, example `pts/3` then there is an active connection 
+> NOTE will not work for Termux since it does not support `utmp / wtmp / btmp` files
 2. Look for specific process ID `PID`
 `$ ps t`  
 3. (Optional) Laugh at their impending disconnection
