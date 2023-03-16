@@ -20,7 +20,33 @@
 ```
 > The `10.1.1.5` is what we want in this example  
 
+* See if any current ssh is running  
+`$ ps aux | grep sshd`  
+
+* Terminate sshd
+- See all sshd connections, if non-zero number then there are ssh processes running  
+`$ pgrep -c sshd`  
+`$ pkill --signal HUP sshd`  
+- Check connections again to make sure, if still not 0 then use this  
+`$ pkill --signal KILL`  
+
+* Disconnect specific ssh clients off from server  
+1. First see who's logged into the the machine  
+`$ who` or `$ w`# if there is anything besides tty1, example `pts/3` then there is an active connection 
+2. Look for specific process ID `PID`
+`$ ps t`  
+3. (Optional) Laugh at their impending disconnection
+`$ echo "HAHAHAHAHAHAHAHA" | write <user> pts/<n>`
+4. Kill the process
+`$ kill -9 30737`  
+
+
+
+* If `sshd` on remote server produces the following error message: `sshd re-exec requires execution with an absolute path` then use this `/usr/sbin/sshd`  
+* If `sshd` on remote server produces the following error message: `sshd: no hostkeys available -- exiting` then use this `ssh-keygen -A`
+
 * For Termux users:
+> NOTE: ip addr will not work unless phone is rooted, but `ifconfig` will from `net-tools` since the `proc_net` and `proc_net_tcp_udp` files are not accessible to `untrusted_app` domain but are allowed for `shell` (`adb`).
 * Termux install openssh  
 `$ pkg in openssh`  
 
@@ -63,10 +89,10 @@ How to SSH File Transfer from Remote to Local
 1. Copy single file from local to remote using scp.  
 `$ scp myfile.txt remoteuser@remoteserver:/remote/folder/`  
 
-2. scp from remote to local using a single file.  
-`$ scp remoteuser@remoteserver:/remote/folder/remotefile.txt  localfile.txt`  
+2. scp from remote to local on local using a single file.  
+`$ scp -P 22 remoteserver:/remote/folder/remotefile ~/localdir/localfile`  
 
-* Copy multiple files from remote to local:  
+* Copy multiple files from remote to local on locall:  
 `$ scp your_username@remote.edu:/some/remote/directory/\{a,b,c\} ./`  
 
 * Copy multiple files from local to remote:  
@@ -78,4 +104,5 @@ How to SSH File Transfer from Remote to Local
 * Copy multiple files from remote to remote:  
   `$ scp your_username@remote1.edu:/some/remote/directory/foobar.txt \`
 
-
+3. Move 'r' using scp from remote to local on local using a single file.  
+`$ scp -r -P 22 remoteserver:/remote/folder/remotefile ~/localdir/localfile`  
