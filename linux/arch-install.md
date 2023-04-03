@@ -6,7 +6,10 @@
 - Set the console keyboard layout  
 `# loadkeys us`  
 - - -
-2. Connect to the internet  
+2. (Optional) set editing mode to vi  
+`# set -o vi`  
+- - -
+3. Connect to the internet  
 - Test internet connection  
 `# ping archlinux.org`  
 or  
@@ -27,7 +30,7 @@ or
 - Exit the iwctl and don't forget to test the connection again  
 `[iwd]# exit`  
 - - -
-3. Sync system clock, mirrors and servers  
+4. Sync system clock, mirrors and servers  
 - Update the system clock  
 `# timedatectl set-ntp true`  
 - Update mirror list by installing reflector and running the following command  
@@ -37,7 +40,7 @@ or
 `# pacman -Syy`  
 - - -
 4. Partition the disks  
-    4.1. Get information on boot mode and current blocks  
+    5.1. Get information on boot mode and current blocks  
     - Verify the boot mode, the below command must show the directory without error otherwise the system is not booted in UEFI mode  
     `# ls /sys/firmware/efi/efivars`  
     > NOTE if no-UEFI (legacy) system we can skip `4.2.` but understand LVM requires it to function therefore must create a default linux filesystem in `4.3.` and also skip `4.5.`  
@@ -46,7 +49,7 @@ or
     `# lsblk`  
     > NOTE: From here onwards we'll assume the disk and it's partition's names are `sda`, `sda1` and `sda2` respectively and one must adjust it to their actually names on their system accordingly.  
 
-    4.2. Create the EFI partition  
+    5.2. Create the EFI partition  
     - Create EFI partition using gdisk (partitioning tool)  
     `# gdisk /dev/sda`  
     - Type `n` for new and press "enter"  
@@ -55,7 +58,7 @@ or
     - Put in `+300M` on Last sector (efi partition)  
     - `ef00` # Change the Current type code from Linux filesystem to EFI system partition and don't do anything else yet  
 
-    4.3. Either create a default linux filesystem or LVM (recommended)  
+    5.3. Either create a default linux filesystem or LVM (recommended)  
     > NOTE: If your filesystem choice is BTRFS much later on, there is no need to create LVMs since it has it's own Subvolume feature. LVM (Logical Volume Management) is useful if we want a flexible disk storage that we either need to create separate partitions on, be able to resize them on the fly or to create snapshots.  
     - Continuing...  
       - For default filesystem press "enter" 4 times on all parameters (Partition number, First sector, Last sector and Current type)  
@@ -72,7 +75,7 @@ or
     - List block devices again to check the new partitions  
     `# lsblk`  
 
-    4.4. (Optional) Encrypt our main partition `sda2` using LUKS  
+    5.4. (Optional) Encrypt our main partition `sda2` using LUKS  
     - Load dm-crypt and dm-mod kernel modules  
     `# modprobe dm_crypt`  
     `# modprobe dm_mod`  
@@ -88,7 +91,7 @@ or
     `# cryptsetup open /dev/sda2 <name-of-partition>`  
     - Enter passphrase  
 
-    4.5. Continuing with LVM  
+    5.5. Continuing with LVM  
     > NOTE: Only continue this step if using LVM, if encrypted use volume path `/dev/mapper/` aka "device mapper" instead of `/dev/sda2`
     - Create physical volumes (PV)  
     `# pvcreate /dev/sda2`  
@@ -114,7 +117,7 @@ or
   <name>    =  name of LV  
 ```
 - - -
-5. Format the filesystem
+6. Format the filesystem
 - Check changes and see if everything is correct  
     `# lsblk`  
 - Based on what system, UEFI or no-UEFI and if encrypted/LVM do one of these options:  
@@ -152,7 +155,7 @@ or
         - Only make swap file partition if it was previously made  
         `# mkswap /dev/vg1/swap`  
 - - -
-6. Mount the filesystems
+7. Mount the filesystems
  - Check partitions before mounting  
 `# lsblk`  
 - Make a boot directory in installation directory to mount `/dev/sda1`  
@@ -170,14 +173,14 @@ or
 - Check mountpoints are correct  
 `# lsblk`  
 - - -
-7. Install base system  
+8. Install base system  
 - First find out what processor the system is using  
 `# lscpu`  
 - Install base packages  
 `# pacstrap /mnt base linux linux-firmware vim amd-ucode lvm2 man openssh tmux`  
 > NOTE: If LTS (long-term support) is desired replace `linux` with `linux-lts`. Omit `linux-firmware` if installing in a VM (virtual machine) or container. Replace `vim` with desired text-editor, example `nano`. Replace `amd-ucode` with `intel-ucode` if we have an intel processor. Omit `lvm2` if not using LVM. The packages `man`, `openssh` and `tmux` are optional.  
  - - -
-8. Move into installation  
+9. Move into installation  
 - First generate the fstab file (where mount points are stored) use `-U` or `-L` to define by UUID or labels respectively  
  `# genfstab -U /mnt >> /mnt/etc/fstab`  
 - See what is in the fstab file  
@@ -185,7 +188,7 @@ or
 - Move into the installation  
  `# arch-chroot /mnt`  
 - - -
-9. Configure new system  
+10. Configure new system  
 - Localization of timezone, find nearest timezone  
  `# timedatectl list-timezones | grep <City>`  
 - Setting correct live timezone  
@@ -214,7 +217,7 @@ or
 - Install packages  
   `# pacman -S grub efibootmgr base-devel xdg-utils xdg-user-dirs linux-headers git less networkmanager network-manager-applet wpa_supplicant dialog mtools dosfstools nfs-utils inetutils dnsutils bluez bluez-utils cups hplip alsa-utils pipewire pipewire-alsa pipewire-pulse pipewire-jack rsync reflector acpi acpi_call tlp virt-manager qemu qemu-arch-extra edk2-ovmf bridge-utils dnsmasq vde2 openbsd-netcat iptables-nft ipset firewalld sof-firmware nss-mdns acpid os-prober ntfs-3g xclip`  
 - - -
-10. Prepare boot loader
+11. Prepare boot loader
 - If using a new keymap and/or LVM and/or encryption edit initcpio.conf file and insert the necessary information  
 `# vim /etc/mkinitcpio.conf`  
 - Look for the "HOOKS" section and after "autodectect" insert `keymap` then after "block" insert `encrypt` and `lvm2`, save and exit.  
@@ -245,13 +248,13 @@ GRUB_CMDLINE_LINUX="cryptdevice=UUID=f233c213-37e8-4f60-b0bd-a6689ea0cb6c:cryptl
 - Generate configuration file for grub  
 `# grub-mkconfig -o /boot/grub/grub.cfg`  
 - - -
-11. Enable services  
+12. Enable services  
 - Enable Network, Bluetooth and Printer services for when the machine is booted  
 `# systemctl enable NetworkManager`  
 `# systemctl enable bluetooth`  
 `# systemctl enable cups.service`  
 - - -
-12. Create new user with sudo privileges  
+13. Create new user with sudo privileges  
 - Create a new user  
 `# useradd -mG wheel <username>`  
 ```
@@ -271,7 +274,7 @@ wheel    =  group name
 %wheel ALL=(ALL) ALL
 ```
 - - -
-13. Reboot new system
+14. Reboot new system
 - Exit installation and return to the installer  
 `# exit`  
 - Unmount the partitions  
