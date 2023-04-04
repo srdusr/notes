@@ -11,7 +11,7 @@
 - - -
 3. Connect to the internet  
 - Test internet connection  
-`# ping archlinux.org`  
+`# ping archlinux.org` # Use Ctrl-c to stop  
 or  
 `# ip a`  
 - If not sure what interfaces are available (wired connection/wifi), use:  
@@ -35,11 +35,11 @@ or
 `# timedatectl set-ntp true`  
 - Update mirror list by installing reflector and running the following command  
 `# pacman -Syy reflector`  
-`# reflector -c <Country> -a 6 --sort rate --save /etc/pacman.d/mirrorlist`  
+`# reflector -c '<Country>' -a 6 --sort rate --save /etc/pacman.d/mirrorlist`  
 - Update servers  
 `# pacman -Syy`  
 - - -
-4. Partition the disks  
+5. Partition the disks  
     5.1. Get information on boot mode and current blocks  
     - Verify the boot mode, the below command must show the directory without error otherwise the system is not booted in UEFI mode  
     `# ls /sys/firmware/efi/efivars`  
