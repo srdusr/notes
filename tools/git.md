@@ -1,5 +1,5 @@
 ## Dotfiles
-#### Creating a dotfile git repo  
+#### Creating a dotfiles git repo  
   1. Intialize git and create a folder named ~/.cfg
   ```bash
   $ git init --bare $HOME/.cfg
