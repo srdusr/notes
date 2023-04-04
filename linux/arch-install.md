@@ -8,6 +8,8 @@
 - - -
 2. (Optional) set editing mode to vi  
 `# set -o vi`  
+or use this script to set some other vi-mode behaviour like showing what mode (INSERT/NORMAL) we are currently in  
+`curl -O https://raw.githubusercontent.com/srdusr/scripts/main/vi-mode.sh | chmod +x vi mode.sh`  
 - - -
 3. Connect to the internet  
 - Test internet connection  
@@ -16,7 +18,7 @@ or
 `# ip a`  
 - If not sure what interfaces are available (wired connection/wifi), use:  
 `# ip link`  
-- If using a wired connection, it is usually picked up automatically  
+- If using a wired connection, it will usually be picked up automatically  
 - If using wifi, it will require some additional setting up. Launch `iwctl` prompt:  
 `# iwctl`  
 - List available devices:  
