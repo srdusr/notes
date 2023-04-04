@@ -119,5 +119,44 @@ unix_sock_rw_perms = "0770"
 - - -
 ###### qemu-system-x86_64
 `$ sudo qemu-system-x86_64 -m 512 -enable-kvm -bios /usr/share/edk2-ovmf/x64/OVMF_CODE.fd -usb -device usb-host,hostbus=3,hostaddr=3`
+
+curl -L -O https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso
+
+qemu-img create -f qcow2 win10.qcow2 20G
+
+qemu-system-x86_64 -enable-kvm \
+-machine type=q35 \
+-m 4G \
+-cpu host \
+-smp 4 \
+-vga virtio \
+-device qemu-xhci -device usb-tablet -device usb-kbd \
+-device virtio-net,netdev=user0 \
+-netdev user,id=user0,hostfwd=tcp::5555-:22 \
+-cdrom "$HOME/machines/images/win10_21h1_english_x64.iso" \
+-drive file="$HOME/machines/vm/win10.qcow2",index=0,media=disk,if=virtio \
+-drive file="$HOME/machines/images/virtio-win.iso",index=3,media=cdrom \
+-boot menu=on \
+-net nic -net user,hostname=windows1064 \
+-name "win10-64"
+
+qemu-img create -f qcow2 archlinux.qcow2 20G
+
+qemu-system-x86_64 -enable-kvm \
+-machine type=q35 \
+-m 4G \
+-cpu host \
+-smp 4 \
+-vga virtio \
+-device qemu-xhci -device usb-tablet -device usb-kbd \
+-device virtio-net,netdev=user0 \
+-netdev user,id=user0,hostfwd=tcp::5555-:22 \
+-cdrom "$HOME/machines/images/archlinux-x86_64.iso" \
+-drive file="$HOME/machines/vm/archlinux.qcow2",index=0,media=disk,if=virtio \
+-drive file="$HOME/machines/images/virtio-win.iso",index=3,media=cdrom \
+-boot menu=on \
+-net nic -net user,hostname=archlinux \
+-name "archlinux-x86_64"
+
 ###### android-x86:
 1. Download latest ISO from android-x86.org
