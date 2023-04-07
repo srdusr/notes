@@ -32,7 +32,7 @@
   ```
   2. Clone the repo
   ```bash
-  $ git clone <remote-git-repo-url> $HOME/.cfg
+  $ git clone --bare <remote-git-repo-url> $HOME/.cfg
   ```
   3. Set up the alias 'config'  
   ```bash
