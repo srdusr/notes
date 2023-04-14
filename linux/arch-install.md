@@ -229,7 +229,10 @@ HOOKS=(base udev autodetect keymap modconf block encrypt lvm2 filesystems keyboa
 ```
 - Generate the initramfs (initial RAM file system) image, replace linux with linux-lts if that was chosen  
 `# mkinitcpio -p linux`  
-- Install GRUB (boot loader)  
+- Install GRUB (boot loader) for either UEFI or no-UEFI  
+- For no-UEFI:  
+`# grub-install /dev/vda` # And skip to generating config file for file  
+- For UEFI:  
 `# grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB`  
 > NOTE: If above command doesn't work try this rather   
 
