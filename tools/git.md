@@ -8,6 +8,7 @@
   ```bash
   $ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
   ```
+
   
   3. Make sure to ignore the folder we're going use to clone.  
   ```bash
@@ -127,4 +128,13 @@ $ git pull origin <branch> --allow-unrelated-histories
 Find out size of a repo before cloning it  
 ```bash
 $ curl -s https://api.github.com/repos/{orgname/username}/{repo_name} | jq '.size' | numfmt --to=iec --from-unit=1024
+
 ```
+---
+#### Trouble-shooting
+fatal: ambiguous argument 'origin': unknown revision or path not in the working tree  
+```bash
+$ git fetch origin main:refs/remotes/origin/main  
+```
+
+---
