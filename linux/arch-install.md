@@ -191,8 +191,6 @@ or
  `# arch-chroot /mnt`  
 - - -
 10. Configure new system  
-- Localization of timezone, find nearest timezone  
- `# timedatectl list-timezones | grep <City>`  
 - Setting correct live timezone  
  `# ln -sf /usr/share/zoneinfo/<Continent>/<City> /etc/localtime`  
 - Synchronize hardware clock to system clock  
