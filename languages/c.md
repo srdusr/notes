@@ -110,5 +110,3 @@
     // Accessing value through pointer
     int value = *pointerName;`
 
-
-
