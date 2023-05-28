@@ -61,4 +61,8 @@ The ! prefix is used to access previous commands.
   `$ xdotool getwindowfocus getwindowgeometry` # just get size/position  
 - - -
 
+#### Listing all users on system
+  ``` bash 
+  $ cat /etc/passwd 
+  ``` 
 
