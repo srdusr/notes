@@ -18,3 +18,9 @@
   `$ DISPLAY=:0 sxhkd &`  
 ```
 - - -
+#### Fix pacman keyring errors 
+``` bash
+  `$ pacman-key --init && pacman-key --populate archlinuxarm`  
+  `$rm /var/lib/pacman/db.lck`  
+```
+- - -
