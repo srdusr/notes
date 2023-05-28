@@ -13,7 +13,7 @@
 #### Reload a program from tty if gui becomes unresponsive 
   `$ DISPLAY=:<n> <name of program>`  
   Example:  
-```
+``` bash
   `$ DISPLAY=:0 xterm &`  
   `$ DISPLAY=:0 sxhkd &`  
 ```
