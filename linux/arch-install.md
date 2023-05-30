@@ -1,5 +1,9 @@
 ### Arch Linux Installation Guide with optional LUKS (encryption) and/or LVM (Logical Volume Management)  
 - - -
+0. Useful system information that may help in trouble-shooting.  
+`# cat /etc/passwd` # Check all users on the system  
+`# cat /etc/shells` # List shells installed on system  
+- - -
 1. Change keyboard layout (only applicable if not using a pc/laptop US keyboard)
 - Look for an appropriate keyboard layout example: `us`  
 `# localectl list-keymaps | grep <keymap>`  
@@ -22,8 +26,7 @@ or
 - If using wifi, it will require some additional setting up. Launch `iwctl` prompt:  
 `# iwctl`  
 - List available devices:  
-`[iwd]# device list` # Should see wifi available with a name like `wlan0`, adjust accordingly if necessary  
-- Scan for networks and list available Wi-Fi networks:  
+`[iwd]# device list` # Should see wifi available with a name like `wlan0`, adjust accordingly if necessary  - Scan for networks and list available Wi-Fi networks:  
 `[iwd]# station wlan0 scan` # This command outputs nothing  
 `[iwd]# station wlan0 get-networks`  
 - Connect to wifi network where `<wifi-name>` is the name of the device  
