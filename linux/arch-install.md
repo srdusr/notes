@@ -3,6 +3,7 @@
 0. Useful system information that may help in trouble-shooting.  
 `# cat /etc/passwd` # Check all users on the system  
 `# cat /etc/shells` # List shells installed on system  
+> \# TODO: Add information about using ssh
 - - -
 1. Change keyboard layout (only applicable if not using a pc/laptop US keyboard)
 - Look for an appropriate keyboard layout example: `us`  
