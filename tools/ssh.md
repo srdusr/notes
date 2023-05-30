@@ -1,5 +1,6 @@
 ### SSH (Secure Shell Protocol)  
 - A method for secure remote login from one computer to another
+> \# Add information about local and target to define which machines
 
 * Find out your username  
 `$ whoami`  
