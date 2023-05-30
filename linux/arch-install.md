@@ -12,7 +12,7 @@
 - - -
 2. (Optional) set editing mode to vi  
 `# set -o vi`  
-or use this script to set some other vi-mode behaviour like showing what mode (INSERT/NORMAL) we are currently in  
+or use this script to set some other vi-mode behaviour like showing what mode (INSERT/NORMAL) we are currently in as well as setting vi-mode  
 `curl -O https://raw.githubusercontent.com/srdusr/scripts/main/vi-mode.sh | chmod +x vi mode.sh`  
 - - -
 3. Connect to the internet  
