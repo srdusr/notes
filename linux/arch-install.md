@@ -202,7 +202,7 @@ or
 - Edit locale.gen file, replace vim with text-editor of choice  
  `# vim /etc/locale.gen`  
 - Uncomment `en_US.UTF-8 UTF-8` and any other needed locales (LANG variable), save and exit  
-- Generate the locales by running  
+- Generate locales  
  `# locale-gen`  
 - Also put the chosen locale into locale.conf  
  `# echo LANG=en_US.UTF-8 >> /etc/locale.conf`  
