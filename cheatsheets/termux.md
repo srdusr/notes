@@ -1,3 +1,7 @@
+
+- Update system
+`# pacman -Syu`
+
 - Change password of root
 `# passwd`
 
