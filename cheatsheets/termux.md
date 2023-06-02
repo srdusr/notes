@@ -52,3 +52,17 @@ wheel    =  group name
 
 - Install yay
 `$ sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si`
+
+- Starting a vncserver, the ports starts from 5900.
+`$ vncserver :1`
+
+- Launch RealVNC Viewer, add new connection `localhost:5901` and type in password to connect to the vncserver
+
+- - -
+
+- Trouble-shooting
+`# pacman-key --init`
+`# pacman-key --populate`
+`# pacman -S archlinuxarm-keyring`
+`# pacman-key --populate archlinuxarm`
+
