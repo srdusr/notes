@@ -6,12 +6,18 @@
 `$ whoami`  
 
 * Check ip address  
+> NOTE:  
+    - lo usually stands for the loopback interface (localhost)  
+    - wlan usually stands for a wireless networking interface  
+    - rmnet interfaces are usually associated with cellular connections and usb tethering  
   * Linux  
 `$ ip addr show | grep "inet "`  
 `$ ifconfig`  
 `$ nmcli -p device show`  
 `$ ip route get 1.2.3.4 | awk '{print $7}'`  
 `$ curl ifconfig.me`  
+
+
   * Windows  
 `$ ipconfig`  
 > NOTE: The IP Address we use will usually be the one not similar to 127.0.0.1 (localhost) but rather a different string of numbers, ignore any forward slash and the numbers after it  
