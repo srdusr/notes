@@ -16,6 +16,7 @@
 `$ nmcli -p device show`  
 `$ ip route get 1.2.3.4 | awk '{print $7}'`  
 `$ curl ifconfig.me`  
+`$ ifconfig 2> /dev/null | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '[0-9.]*'`
 
 
   * Windows  
