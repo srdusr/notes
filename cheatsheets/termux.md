@@ -7,6 +7,9 @@
 - 
 `# passwd <username>`
 
+- Install common base tools
+`# pacman -S vim sudo wget networkmanager xorg xorg-server git openssh fakeroot base-devel tigervnc tmux neofetch`
+
 - Add <username> to sudoers. Edit/etc/sudoers with vi, add following lines beneath "root ALL=(ALL) ALL":
 `<username> ALL=(ALL) ALL`
 
