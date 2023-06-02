@@ -5,6 +5,19 @@
 - Change password of root
 `# passwd`
 
+- Configure new system  
+- Setting correct live timezone  
+ `# ln -sf /usr/share/zoneinfo/<Continent>/<City> /etc/localtime`  
+- Synchronize hardware clock to system clock  
+ `# hwclock --systohc`  
+- Edit locale.gen file, replace vim with text-editor of choice  
+ `# vim /etc/locale.gen`  
+- Uncomment `en_US.UTF-8 UTF-8` and any other needed locales (LANG variable), save and exit  
+- Generate locales  
+ `# locale-gen`  
+- Also put the chosen locale into locale.conf  
+ `# echo LANG=en_US.UTF-8 >> /etc/locale.conf`  
+
 - Install common base tools
 `# pacman -S vim sudo visudo wget networkmanager xorg xorg-server git openssh fakeroot base-devel tigervnc tmux neofetch`
 
