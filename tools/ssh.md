@@ -75,6 +75,9 @@
 * Start server in machine that will ssh into  
 `$ sshd`  
 
+* Send authorization to the remote target so we can ssh into the machine 
+`$ ssh-copy-id -p 8022 -i ~/.ssh/id_rsa.pub user@ip.address`
+
 * Android remote host into desktop server, assuming default port 8022  
 `$ ssh your_desktop_ssh_user@YOUR.DESKTOP.IP.ADDRESS -p 8022`  
 
