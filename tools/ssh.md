@@ -76,8 +76,6 @@
 * Start server in machine that will ssh into  
 `$ sshd`  
 
-* Send authorization to the remote target so we can ssh into the machine 
-`$ ssh-copy-id -p 8022 -i ~/.ssh/id_rsa.pub user@ip.address`
 
 * Android remote host into desktop server, assuming default port 8022  
 `$ ssh your_desktop_ssh_user@YOUR.DESKTOP.IP.ADDRESS -p 8022`  
@@ -120,3 +118,37 @@ How to SSH File Transfer from Remote to Local
 
 3. Move 'r' using scp from remote to local on local using a single file.  
 `$ scp -r -P 22 remoteserver:/remote/folder/remotefile ~/localdir/localfile`  
+
+- - -
+
+- (Optional) Install openssh
+`$ apt install openssh`
+
+- Make sure `passwd` is set for the server (root/non-root user)
+
+- On server machine edit sshd_config
+`$ vi /etc/ssh/sshd_config`
+
+- Find and change the line `#Port 22` to `Port 8022`  
+- Find the line `#PermitRootLogin prohibit-password` or `#PermitRootLogin yes`  and change it to `PermitRootLogin yes`. If it is already `PermitRootLogin yes` then don't change anything.
+- Now do `ssh-keygen -A` and then `ssh-keygen` 
+ or 
+ `$ ssh-keygen -b 4096 -t rsa`
+
+- OpenSSH has a utility to send the key remotely via either machine 
+`$ ssh-copy-id -p 8022 -i ~/.ssh/id_rsa.pub user@ip.address`
+
+- Ssh into the host server machine from the local machine
+`$ ssh user@ip.address -p 8022`
+
+
+- - -
+
+#### Trouble-shooting
+- Check or disable firewall
+`$ sudo ufw status`
+`$ sudo ufw disable`
+`$ sudo ufw reload`
+`$ sudo ufw allow port/tcp` # if default port 22
+`$ sudo ufw allow 8022/tcp` # if using specific port
+
