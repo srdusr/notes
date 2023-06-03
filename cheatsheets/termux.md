@@ -19,7 +19,7 @@
  `# echo LANG=en_US.UTF-8 >> /etc/locale.conf`  
 
 - Install common base tools
-`# pacman -S vim sudo visudo wget networkmanager xorg xorg-server git openssh fakeroot base-devel tigervnc tmux neofetch`
+`# pacman -S vim sudo visudo wget networkmanager xorg xorg-server git openssh fakeroot bsdtar base-devel tigervnc tmux neofetch`
 
 - Create new user with sudo privileges  
 - Create a new user  
@@ -53,10 +53,54 @@ wheel    =  group name
 - Install yay
 `$ sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si`
 
+- Edit ~/.profile and add the following lines:
+```bash
+export DISPLAY=:0
+# Start pulse audio server in proot after login
+export PULSE_SERVER=127.0.0.1 && pulseaudio --start --disable-shm=1 --exit-idle-time=-1
+```
+- or just type this one time:
+`$ export DISPLAY=":1"`
+
+- And make it executable
+`$ chmod +x ~/.profile`
+
+- Setup vncserver
+`$ vncserver -localhost`
+
 - Starting a vncserver, the ports starts from 5900.
 `$ vncserver :1`
 
-- Launch RealVNC Viewer, add new connection `localhost:5901` and type in password to connect to the vncserver
+- Launch RealVNC Viewer, add new connection `localhost:5901` or `127.0.0.1:5901` and type in password to connect to the vncserver
+> NOTE: To determine port number on which VNC server listens. It can be calculated by: 5900 + {display number}. So for display 'localhost:1' the port will be 5901
+
+- Make the vnc startup script
+`$ mkdir ~/.vnc && touch ~/.vnc/xstartup`
+
+- Edit the startup script
+`$ vim ~/.vnc/xstartup`
+```bash
+#!/data/data/com.termux/files/usr/bin/sh
+
+## file is executed during VNC server
+## startup.
+
+# Launch terminal emulator Aterm.
+# Requires package 'aterm'.
+aterm -geometry 80x24+10+10 -ls &
+
+unset SESSION_MANAGER
+unset DBUS_SESSION_BUS_ADDRESS
+
+export PULSE_SERVER=127.0.0.1 && pulseaudio --start --disable-shm=1 --exit-idle-time=-1
+
+# Execute XFCE4
+# Launch Window Manager/Desktop Environment
+bspwm &
+
+```
+- Make it executable
+`$ chmod +x ~/.vnc/xstartup`
 
 - - -
 
