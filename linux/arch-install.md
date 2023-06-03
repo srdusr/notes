@@ -9,7 +9,7 @@
 - Look for an appropriate keyboard layout example: `us`  
 `# localectl list-keymaps | grep <keymap>`  
 - Set the console keyboard layout  
-`# loadkeys us`  
+`# loadkeys <keymap>`  
 - - -
 2. (Optional) set editing mode to vi  
 `# set -o vi`  
