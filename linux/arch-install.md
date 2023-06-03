@@ -11,12 +11,7 @@
 - Set the console keyboard layout  
 `# loadkeys <keymap>`  
 - - -
-2. (Optional) set editing mode to vi  
-`# set -o vi`  
-or use this script to set some other vi-mode behaviour like showing what mode (INSERT/NORMAL) we are currently in as well as setting vi-mode  
-`curl -O https://raw.githubusercontent.com/srdusr/scripts/main/vi-mode.sh | chmod +x vi mode.sh`  
-- - -
-3. Connect to the internet  
+2. Connect to the internet  
 - Test internet connection  
 `# ping archlinux.org` # Use Ctrl-c to stop  
 or  
@@ -36,7 +31,7 @@ or
 - Exit the iwctl and don't forget to test the connection again  
 `[iwd]# exit`  
 - - -
-4. Sync system clock, mirrors and servers  
+3. Sync system clock, mirrors and servers  
 - Update the system clock  
 `# timedatectl set-ntp true`  
 - Update mirror list by installing reflector and running the following command  
@@ -45,7 +40,7 @@ or
 - Update servers  
 `# pacman -Syy`  
 - - -
-5. Partition the disks  
+4. Partition the disks  
     5.1. Get information on boot mode and current blocks  
     - Verify the boot mode, the below command must show the directory without error otherwise the system is not booted in UEFI mode  
     `# ls /sys/firmware/efi/efivars`  
@@ -123,7 +118,7 @@ or
   <name>    =  name of LV  
 ```
 - - -
-6. Format the filesystem
+5. Format the filesystem
 - Check changes and see if everything is correct  
     `# lsblk`  
 - Based on what system, UEFI or no-UEFI and if encrypted/LVM do one of these options:  
@@ -161,7 +156,7 @@ or
         - Only make swap file partition if it was previously made  
         `# mkswap /dev/vg1/swap`  
 - - -
-7. Mount the filesystems
+6. Mount the filesystems
  - Check partitions before mounting  
 `# lsblk`  
 - Make a boot directory in installation directory to mount `/dev/sda1`  
@@ -179,14 +174,14 @@ or
 - Check mountpoints are correct  
 `# lsblk`  
 - - -
-8. Install base system  
+7. Install base system  
 - First find out what processor the system is using  
 `# lscpu`  
 - Install base packages  
 `# pacstrap /mnt base linux linux-firmware vim amd-ucode lvm2 man openssh tmux`  
 > NOTE: If LTS (long-term support) is desired replace `linux` with `linux-lts`. Omit `linux-firmware` if installing in a VM (virtual machine) or container. Replace `vim` with desired text-editor, example `nano`. Replace `amd-ucode` with `intel-ucode` if we have an intel processor. Omit `lvm2` if not using LVM. The packages `man`, `openssh` and `tmux` are optional.  
  - - -
-9. Move into installation  
+8. Move into installation  
 - First generate the fstab file (where mount points are stored) use `-U` or `-L` to define by UUID or labels respectively  
  `# genfstab -U /mnt >> /mnt/etc/fstab`  
 - See what is in the fstab file  
@@ -194,7 +189,7 @@ or
 - Move into the installation  
  `# arch-chroot /mnt`  
 - - -
-10. Configure new system  
+9. Configure new system  
 - Setting correct live timezone  
  `# ln -sf /usr/share/zoneinfo/<Continent>/<City> /etc/localtime`  
 - Synchronize hardware clock to system clock  
@@ -221,7 +216,7 @@ or
 - Install packages  
   `# pacman -S grub efibootmgr base-devel xdg-utils xdg-user-dirs linux-headers git less networkmanager network-manager-applet wpa_supplicant dialog mtools dosfstools nfs-utils inetutils dnsutils bluez bluez-utils cups hplip alsa-utils pipewire pipewire-alsa pipewire-pulse pipewire-jack rsync reflector acpi acpi_call tlp virt-manager qemu qemu-arch-extra edk2-ovmf bridge-utils dnsmasq vde2 openbsd-netcat iptables-nft ipset firewalld sof-firmware nss-mdns acpid os-prober ntfs-3g xclip`  
 - - -
-11. Prepare boot loader
+10. Prepare boot loader
 - If using a new keymap and/or LVM and/or encryption edit initcpio.conf file and insert the necessary information  
 `# vim /etc/mkinitcpio.conf`  
 - Look for the "HOOKS" section and after "autodectect" insert `keymap` then after "block" insert `encrypt` and `lvm2`, save and exit.  
@@ -255,13 +250,13 @@ GRUB_CMDLINE_LINUX="cryptdevice=UUID=f233c213-37e8-4f60-b0bd-a6689ea0cb6c:cryptl
 - Generate configuration file for grub  
 `# grub-mkconfig -o /boot/grub/grub.cfg`  
 - - -
-12. Enable services  
+11. Enable services  
 - Enable Network, Bluetooth and Printer services for when the machine is booted  
 `# systemctl enable NetworkManager`  
 `# systemctl enable bluetooth`  
 `# systemctl enable cups.service`  
 - - -
-13. Create new user with sudo privileges  
+12. Create new user with sudo privileges  
 - Create a new user  
 `# useradd -mG wheel <username>`  
 ```
@@ -281,7 +276,7 @@ wheel    =  group name
 %wheel ALL=(ALL) ALL
 ```
 - - -
-14. Reboot new system
+13. Reboot new system
 - Exit installation and return to the installer  
 `# exit`  
 - Unmount the partitions  
