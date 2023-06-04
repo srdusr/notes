@@ -1,9 +1,29 @@
 ### Arch Linux Installation Guide with optional LUKS (encryption) and/or LVM (Logical Volume Management)  
 - - -
-0. Useful system information that may help in trouble-shooting.  
+0. Optional:
+- Useful system information that may help in trouble-shooting.  
 `# cat /etc/passwd` # Check all users on the system  
 `# cat /etc/shells` # List shells installed on system  
-> \# TODO: Add information about using ssh
+- Installing via ssh (recommended to have prior knowledge of ssh/networking)  
+  - Set up the password for root on the remote(target) machine  
+  `# passwd`  
+  > NOTE: No need to reset password later on during the installation  
+  - Connect to the internet by doing Step "2. Connect to the internet"  
+  - Get the IP address (recommended to get both remote and local)  
+  `# ip a`  
+  or  
+  `# ifconfig`  
+  > NOTE: Getting the correct IP address will vary in method and might require trial and error.
+  A few factors to consider are whether either remote/local are in a vm and if local is a different OS, example Windows would use `# ipconfig`.
+  - Confirm that `PermitRootLogin yes` is set in /etc/ssh/sshd_config on the remote machine. If it's not, set it  
+  `# vim /etc/ssh/sshd_config`  
+  - Reload the sshd daemon on the remote machine  
+  `# pkill sshd && /usr/bin/sshd`  
+  - OpenSSH has a utility to send the key remotely to either machine, only use the `-p` flag if specifying a `<port>` to use 
+  `$ ssh-copy-id -p <port> -i ~/.ssh/id_rsa.pub user@ip.address`  
+  > NOTE: Working out which `<port>` to use (default is usually 22) might also require trial and error dependent on remote/local configurations. Some commands to check current active ports: `lsof -Pi | grep ssh` and `netstat -lntu`.
+  - Connect to the target machine on the local machine via ssh  
+  `# ssh -p <port> root@ip.address`  
 - - -
 1. Change keyboard layout (only applicable if not using a pc/laptop US keyboard)
 - Look for an appropriate keyboard layout example: `us`  
