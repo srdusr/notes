@@ -5,6 +5,9 @@
 - Change password of root
 `# passwd`
 
+- Install common base tools
+`# pacman -S vim sudo wget networkmanager xorg xorg-server git openssh fakeroot base-devel tigervnc tmux neofetch`
+
 - Configure new system  
 - Setting correct live timezone  
  `# ln -sf /usr/share/zoneinfo/<Continent>/<City> /etc/localtime`  
@@ -15,9 +18,6 @@
  `# locale-gen`  
 - Also put the chosen locale into locale.conf  
  `# echo LANG=en_US.UTF-8 >> /etc/locale.conf`  
-
-- Install common base tools
-`# pacman -S vim sudo visudo wget networkmanager xorg xorg-server git openssh fakeroot bsdtar base-devel tigervnc tmux neofetch`
 
 - Create new user with sudo privileges  
 - Create a new user  
@@ -38,7 +38,7 @@ wheel    =  group name
 ```
 %wheel ALL=(ALL) ALL
 ```
-
+//export USER=(username); useradd $USER; echo "$USER ALL=(ALL) ALL" >> /etc/sudoers 
 //- Add <username> to sudoers. Edit/etc/sudoers with vi, add following lines beneath "root ALL=(ALL) ALL":
 //`<username> ALL=(ALL) ALL`
 
@@ -62,6 +62,17 @@ export PULSE_SERVER=127.0.0.1 && pulseaudio --start --disable-shm=1 --exit-idle-
 
 - And make it executable
 `$ chmod +x ~/.profile`
+
+- If Proot audio not working
+
+    Run this command in Proot-distro:
+
+export PULSE_SERVER=127.0.0.1 && pulseaudio --start --disable-shm=1 --exit-idle-time=-1
+
+    Run this command in Termux (not in proot!)
+
+pulseaudio --start --load="module-native-protocol-tcp auth-ip-acl=127.0.0.1 auth-anonymous=1" --exit-idle-time=-1
+pacmd load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1 auth-anonymous=1
 
 - Setup vncserver
 `$ vncserver -localhost`
@@ -100,6 +111,26 @@ bspwm &
 - Make it executable
 `$ chmod +x ~/.vnc/xstartup`
 
+    Create a password for vncserver
+
+vncpasswd
+
+    Add following lines to ~/.vnc/config
+
+# The session we want to start
+session=xfce4
+# Screen resolution
+geometry=1920x1080
+localhost
+
+    Add following lines to ~/.vnc/xstartup, so it will execute XFCE4 after starting vncserver.
+
+#!/bin/bash
+unset SESSION_MANAGER
+unset DBUS_SESSION_BUS_ADDRESS
+export PULSE_SERVER=127.0.0.1 && pulseaudio --start --disable-shm=1 --exit-idle-time=-1
+# Execute XFCE4
+dbus-launch --exit-with-session startxfce4
 - - -
 
 - Trouble-shooting
