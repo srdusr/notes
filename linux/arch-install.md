@@ -54,11 +54,11 @@ or
 3. Sync system clock, mirrors and servers  
 - Update the system clock  
 `# timedatectl set-ntp true`  
+- Sync the pacman repositories/servers
+`# pacman -Syy`
 - Update mirror list by installing reflector and running the following command  
-`# pacman -Syy reflector`  
+`# pacman -S reflector`  
 `# reflector -c '<Country>' -a 6 --sort rate --save /etc/pacman.d/mirrorlist`  
-- Update servers  
-`# pacman -Syy`  
 - - -
 4. Partition the disks  
     5.1. Get information on boot mode and current blocks  
