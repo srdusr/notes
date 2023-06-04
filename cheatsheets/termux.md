@@ -8,8 +8,6 @@
 - Configure new system  
 - Setting correct live timezone  
  `# ln -sf /usr/share/zoneinfo/<Continent>/<City> /etc/localtime`  
-- Synchronize hardware clock to system clock  
- `# hwclock --systohc`  
 - Edit locale.gen file, replace vim with text-editor of choice  
  `# vim /etc/locale.gen`  
 - Uncomment `en_US.UTF-8 UTF-8` and any other needed locales (LANG variable), save and exit  
