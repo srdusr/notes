@@ -41,8 +41,8 @@ wheel    =  group name
 %wheel ALL=(ALL) ALL
 ```
 
-- Add <username> to sudoers. Edit/etc/sudoers with vi, add following lines beneath "root ALL=(ALL) ALL":
-`<username> ALL=(ALL) ALL`
+//- Add <username> to sudoers. Edit/etc/sudoers with vi, add following lines beneath "root ALL=(ALL) ALL":
+//`<username> ALL=(ALL) ALL`
 
 - Login to the non-root user account by default,
 `# echo startarch login username > archlinux; chmod +x archlinux`
@@ -109,4 +109,5 @@ bspwm &
 `# pacman-key --populate`
 `# pacman -S archlinuxarm-keyring`
 `# pacman-key --populate archlinuxarm`
+`# rm /var/lib/pacman/db.lck`
 
