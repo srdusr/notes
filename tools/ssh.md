@@ -124,22 +124,36 @@ How to SSH File Transfer from Remote to Local
 - (Optional) Install openssh
 `$ apt install openssh`
 
-- Make sure `passwd` is set for the server (root/non-root user)
+- Make sure `passwd` is set for the remote/local machine (root/non-root user)  
+`# passwd` # For root  
+or  
+`$ passwd <username>` # For user  
 
+- Confirm that machines are connected to the internet/LAN or via cables if possible
+- Get the IP address (recommended to get both remote and local)  
+`# ip a`  
+or  
+`# ifconfig`  
+> NOTE: Getting the correct IP address will vary in method and might require trial and error.  
+A few factors to consider are whether either remote/local are in a VM and what OS is being used, example Windows would use `# ipconfig`.  
+- If the remote machine is root then confirm that `PermitRootLogin yes` is set in /etc/ssh/sshd_config on the remote machine. If it's not, set it  
+`# vim /etc/ssh/sshd_config`  
+> NOTE: - Optional find and change the default line `#Port 22` to desired port, example: `Port 8022`  
+- Reload the sshd daemon on the remote machine  
+`# pkill sshd && /usr/bin/sshd`  
+- Generate keys  
+`# ssh-keygen A`  
+`# ssh-keygen`  
+ or  
+ `$ ssh-keygen -b 4096 -t rsa`  
+> NOTE: No need to enter passphrase unless desired.  
+- OpenSSH has a utility to send the key remotely to either machine, only use the `-p` flag if specifying a `<port>` to use 
+`$ ssh-copy-id -p <port> -i ~/.ssh/id_rsa.pub user@ip.address`  
+> NOTE: Working out which `<port>` to use (default is usually 22) might also require trial and error dependent on remote/local configurations. Some commands to check current active ports: `lsof -Pi | grep ssh` and `netstat -lntu`.
+- Connect to the target machine on the local machine via ssh  
+`# ssh -p <port> root@ip.address`  
 - On server machine edit sshd_config
 `$ vi /etc/ssh/sshd_config`
-
-- Find and change the line `#Port 22` to `Port 8022`  
-- Find the line `#PermitRootLogin prohibit-password` or `#PermitRootLogin yes`  and change it to `PermitRootLogin yes`. If it is already `PermitRootLogin yes` then don't change anything.
-- Now do `ssh-keygen -A` and then `ssh-keygen` 
- or 
- `$ ssh-keygen -b 4096 -t rsa`
-
-- OpenSSH has a utility to send the key remotely via either machine 
-`$ ssh-copy-id -p 8022 -i ~/.ssh/id_rsa.pub user@ip.address`
-
-- Ssh into the host server machine from the local machine
-`$ ssh user@ip.address -p 8022`
 
 
 - - -
