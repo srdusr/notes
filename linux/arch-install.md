@@ -19,6 +19,10 @@
   `# vim /etc/ssh/sshd_config`  
   - Reload the sshd daemon on the remote machine  
   `# pkill sshd && /usr/bin/sshd`  
+  - Generate keys  
+  `# ssh-keygen A`  
+  `# ssh-keygen`  
+  > NOTE: No need to enter passphrase unless desired.  
   - OpenSSH has a utility to send the key remotely to either machine, only use the `-p` flag if specifying a `<port>` to use 
   `$ ssh-copy-id -p <port> -i ~/.ssh/id_rsa.pub user@ip.address`  
   > NOTE: Working out which `<port>` to use (default is usually 22) might also require trial and error dependent on remote/local configurations. Some commands to check current active ports: `lsof -Pi | grep ssh` and `netstat -lntu`.
