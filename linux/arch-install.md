@@ -14,7 +14,7 @@
   or  
   `# ifconfig`  
   > NOTE: Getting the correct IP address will vary in method and might require trial and error.
-  A few factors to consider are whether either remote/local are in a vm and if local is a different OS, example Windows would use `# ipconfig`.
+  A few factors to consider are whether either remote/local are in a VM and if local is a different OS, example Windows would use `# ipconfig`.
   - Confirm that `PermitRootLogin yes` is set in /etc/ssh/sshd_config on the remote machine. If it's not, set it  
   `# vim /etc/ssh/sshd_config`  
   - Reload the sshd daemon on the remote machine  
@@ -65,16 +65,16 @@ or
 `# reflector -c '<Country>' -a 6 --sort rate --save /etc/pacman.d/mirrorlist`  
 - - -
 4. Partition the disks  
-    5.1. Get information on boot mode and current blocks  
+    4.1. Get information on boot mode and current blocks  
     - Verify the boot mode, the below command must show the directory without error otherwise the system is not booted in UEFI mode  
     `# ls /sys/firmware/efi/efivars`  
-    > NOTE if no-UEFI (legacy) system we can skip `4.2.` but understand LVM requires it to function therefore must create a default linux filesystem in `4.3.` and also skip `4.5.`  
+    > NOTE if no-UEFI (legacy) system we can skip "4.2." but understand LVM requires it to function therefore must create a default linux filesystem in "4.3." and also skip "4.5."  
   
     - List block devices to get the disk name (where disk device is), usually "/dev/sda", "/dev/vda", "/dev/nve0n1" or "/dev/mmcblk0" etc..  
     `# lsblk`  
     > NOTE: From here onwards we'll assume the disk and it's partition's names are `sda`, `sda1` and `sda2` respectively and one must adjust it to their actually names on their system accordingly.  
 
-    5.2. Create the EFI partition  
+    4.2. Create the EFI partition  
     - Create EFI partition using gdisk (partitioning tool)  
     `# gdisk /dev/sda`  
     - Type `n` for new and press "enter"  
@@ -83,8 +83,8 @@ or
     - Put in `+300M` on Last sector (efi partition)  
     - `ef00` # Change the Current type code from Linux filesystem to EFI system partition and don't do anything else yet  
 
-    5.3. Either create a default linux filesystem or LVM (recommended)  
-    > NOTE: If your filesystem choice is BTRFS much later on, there is no need to create LVMs since it has it's own Subvolume feature. LVM (Logical Volume Management) is useful if we want a flexible disk storage that we either need to create separate partitions on, be able to resize them on the fly or to create snapshots.  
+    4.3. Either create a default linux filesystem or LVM (recommended)  
+    > NOTE: If your filesystem choice is BTRFS later on in "5. Format the filesystem", there is no need to create LVMs since it has it's own Subvolume feature. LVM (Logical Volume Management) is useful if we want a flexible disk storage that we either need to create separate partitions on, be able to resize them on the fly or to create snapshots.  
     - Continuing...  
       - For default filesystem press "enter" 4 times on all parameters (Partition number, First sector, Last sector and Current type)  
     - or  
@@ -100,7 +100,7 @@ or
     - List block devices again to check the new partitions  
     `# lsblk`  
 
-    5.4. (Optional) Encrypt our main partition `sda2` using LUKS  
+    4.4. (Optional) Encrypt our main partition `sda2` using LUKS  
     - Load dm-crypt and dm-mod kernel modules  
     `# modprobe dm_crypt`  
     `# modprobe dm_mod`  
@@ -116,7 +116,7 @@ or
     `# cryptsetup open /dev/sda2 <name-of-partition>`  
     - Enter passphrase  
 
-    5.5. Continuing with LVM  
+    4.5. Continuing with LVM  
     > NOTE: Only continue this step if using LVM, if encrypted use volume path `/dev/mapper/` aka "device mapper" instead of `/dev/sda2`
     - Create physical volumes (PV)  
     `# pvcreate /dev/sda2`  
