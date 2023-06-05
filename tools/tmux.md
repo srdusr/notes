@@ -1,14 +1,14 @@
 ## Tmux Notes
 #### Quick Summary
 If a  command/keybinding starts with a colon `:` assume that a prefix precedes it.
-Usually the default prefix is `Ctrl-b` but can be different if set to something
+Usually the default prefix is `Ctrl + b` but can be different if set to something
 else.  
 To set a different prefix put the following into tmux.conf:
 ```bash
 # Setting the prefix from C-b to C-s
 unbind C-b
 set -g prefix C-s
-# Ensure that we can send Ctrl-S to other apps
+# Ensure that we can send Ctrl + S to other apps
 bind C-s send-prefix
 ```
 
@@ -133,7 +133,7 @@ $ `tmux new -s mysession -n mywindow`
 `<prefix> n`  
 
 * rotate window  
-`<prefix> Ctrl-o` 
+`<prefix> Ctrl + o` 
 
 * Move(cycle) cursor to next window  
 `<prefix> o`  
