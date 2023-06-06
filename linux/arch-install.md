@@ -101,7 +101,7 @@ or
     `+4G` or general rule of thumb is 1x2 of RAM. for /swap though can use swapfile
     `+10G` for /var or /var/tmp
     - On Current type either:
-      - Press "enter" if default filesystem but when creating a `swap` partition then put in `8200` to set a Linux swap partition and make sure to just press "Enter" on this option again when repeating this step to create `/root` or `/home` etc...  
+      - Press "enter" if default filesystem, if `/swap` then put in `8200`.  
     - or  
       - Put in `8e00` to change the Current type code from Linux filesystem to Linux LVM if using LVM which will be continued in step ***4.5.***  
     - Save changes  
