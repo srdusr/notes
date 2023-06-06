@@ -8,7 +8,7 @@
   - Set up the password for root on the remote(target) machine  
   `# passwd`  
   > NOTE: No need to reset password later on during the installation  
-  - Connect to the internet by doing Step "2. Connect to the internet"  
+  - Connect to the internet by doing Step ***2. Connect to the internet***  
   - Get the IP address (recommended to get both remote and local)  
   `# ip a`  
   or  
@@ -68,35 +68,45 @@ or
     4.1. Get information on boot mode and current blocks  
     - Verify the boot mode, the below command must show the directory without error otherwise the system is not booted in UEFI mode  
     `# ls /sys/firmware/efi/efivars`  
-    > NOTE if no-UEFI (legacy) system we can skip "4.2." but understand LVM requires it to function therefore must create a default linux filesystem in "4.3." and also skip "4.5."  
+    > NOTE if no-UEFI (legacy) system we can skip ***4.2.*** but understand LVM requires it to function therefore must create a default linux filesystem in ***4.3.*** and also skip ***4.5.***  
   
     - List block devices to get the disk name (where disk device is), usually "/dev/sda", "/dev/vda", "/dev/nve0n1" or "/dev/mmcblk0" etc..  
     `# lsblk`  
     > NOTE: From here onwards we'll assume the disk and it's partition's names are `sda`, `sda1` and `sda2` respectively and one must adjust it to their actually names on their system accordingly.  
 
-    4.2. Create the EFI partition  
-    - Create EFI partition using gdisk (partitioning tool)  
+    4.2. Create the `BIOS` or `UEFI` partition  
+    - Create the partition using gdisk (partitioning tool)  
     `# gdisk /dev/sda`  
     - Type `n` for new and press "enter"  
     - Press "enter" on default Partition number  
     - Press "enter" on default First sector  
-    - Put in `+300M` on Last sector (efi partition)  
-    - `ef00` # Change the Current type code from Linux filesystem to EFI system partition and don't do anything else yet  
+    - Put in `+512M` on Last sector if using more than one partition (recommended but if `UEFI` then it is required), example: "`/boot` or `/efi` and `/root`" or "`/boot` or `/efi`, `/root` and `/home`" etc... Therefore this will be the `/boot` or `/efi` partition otherwise just press "Enter" and skip ***4.3.*** to create only one partition.  
+    > NOTE: `M` is short for megabytes and can be `+300M` or `+1024M`.  
+    - Current type:  
+      - If `BIOS` just press "enter"  
+    - or
+      - If `UEFI` put in `ef00` and press "enter" to change the Current type code from Linux filesystem to EFI system partition  
 
-    4.3. Either create a default linux filesystem or LVM (recommended)  
-    > NOTE: If your filesystem choice is BTRFS later on in "5. Format the filesystem", there is no need to create LVMs since it has it's own Subvolume feature. LVM (Logical Volume Management) is useful if we want a flexible disk storage that we either need to create separate partitions on, be able to resize them on the fly or to create snapshots.  
+    4.3. Either create one or more seperate default linux filesystem(s) or LVM (recommended)  
+    > NOTE: If your filesystem choice is BTRFS later on in ***5. Format the filesystem***, there is no need to create LVMs since it has it's own Subvolume feature. LVM (Logical Volume Management) is useful if we want a flexible disk storage that we either need to create separate partitions on, be able to resize them on the fly or to create snapshots.  
     - Continuing...  
-      - For default filesystem press "enter" 4 times on all parameters (Partition number, First sector, Last sector and Current type)  
+    - Type `n` again to create another new partition and press "enter".  
+    - Press "enter" on default Partition number again.  
+    > NOTE: The value should correspond with how many partitions we are making. Example should be `default 2` if this is the 2nd partition otherwise put in `2` or whatever correct value needed and press "Enter".  
+    - Press "enter" on default First sector again.  
+    - Press "enter" on default Last sector this time to use the remaining space if just creating one other partition `/root` otherwise if more seperate partitions will be created, example: `/home` and/or `/swap` and/or `/var` then put in a fixed amount of space by repeating step ***4.3.*** for each but make sure to do `/root` last if no seperate `/home` partition or `/home` last if specified and let it have the remaining space by just pressing "Enter". Another option is to specifiy space for the last created partition (`/home`/`/root`) therefore we have leftover unused space to use in the future to possibily allocate to existing or create more partitions.  
+    > NOTE: General recommendations but can greatly differ 
+    `+60G` for /root
+    /root recommended at least 15-20G, more is better. If `/home` is created then user-data will be stored in `/home`. `root` will usually store what's installed from the package manager(s) therefore if many packages/software will be installed don't be afraid to increase the size, example `+80G` or more if disk has enough space.
+    `+4G` or general rule of thumb is 1x2 of RAM. for /swap though can use swapfile
+    `+10G` for /var or /var/tmp
+    - On Current type either:
+      - Press "enter" if default filesystem but when creating a `swap` partition then put in `8200` to set a Linux swap partition and make sure to just press "Enter" on this option again when repeating this step to create `/root` or `/home` etc...  
     - or  
-      - Create LVM partition  
-        - Type `n` for new again and press "enter"  
-        - Press "enter" on default Partition number again  
-        - Press "enter" on default First sector again  
-        - Press "enter" on default Last sector this time  
-        - `8e00` -- Change the Current type code from Linux filesystem to Linux LVM  
+      - Put in `8e00` to change the Current type code from Linux filesystem to Linux LVM if using LVM which will be continued in step ***4.5.***  
     - Save changes  
-    - Type "w" to write changes and press "enter"  
-    - Type "y" to confirm and press "enter"  
+      - Type "w" to write changes and press "enter"  
+      - Type "y" to confirm and press "enter"  
     - List block devices again to check the new partitions  
     `# lsblk`  
 
@@ -236,6 +246,7 @@ or
  `# echo "127.0.1.1 <hostname>.localdomain <hostname>" >> /etc/hosts`  
 - Give root user a new password  
  `# passwd`  
+> NOTE: No need to create password again if done already, example would be if already set when using ssh.
 - Type in new password and retype it to verify  
 - Install packages  
   `# pacman -S grub efibootmgr base-devel xdg-utils xdg-user-dirs linux-headers git less networkmanager network-manager-applet wpa_supplicant dialog mtools dosfstools nfs-utils inetutils dnsutils bluez bluez-utils cups hplip alsa-utils pipewire pipewire-alsa pipewire-pulse pipewire-jack rsync reflector acpi acpi_call tlp virt-manager qemu qemu-arch-extra edk2-ovmf bridge-utils dnsmasq vde2 openbsd-netcat iptables-nft ipset firewalld sof-firmware nss-mdns acpid os-prober ntfs-3g xclip`  
