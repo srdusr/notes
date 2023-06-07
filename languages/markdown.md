@@ -51,11 +51,9 @@ use three backticks followed by the name of the language
 > To make a blockquote use greater-than sign aka "chevron" or "angle bracket" at the beginning `>`
 >> Can also nest with `>>`
 
-To comment out text we use `[//]: # ` followed by `"text to comment out"`  
+`<!--` Anything between these is commented out `-->`  
 Try viewing this in a raw format and through a parser to spot any differences.
-
-
-[//]: # "lanigiro taht ton m'I esuaceb txet esrever emos tsuJ"
+<!-- "lanigiro taht ton m'I esuaceb txet esrever emos tsuJ" -->
 
 For definitions use:
 ```
