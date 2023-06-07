@@ -68,7 +68,7 @@ or
     4.1. Get information on boot mode and current blocks  
     - Verify the boot mode, the below command must show the directory without error otherwise the system is not booted in UEFI mode  
     `# ls /sys/firmware/efi/efivars`  
-    > NOTE if no-UEFI (legacy aka BIOS) system we cannot create LVM partiton(s) therefore must create a default linux filesystem in ***4.3.*** and also skip ***4.5.***  
+    > NOTE if no-UEFI (legacy aka BIOS) system we cannot create LVM partiton(s) therefore if wanting to create more than one partition must create a default linux filesystem in ***4.3.*** and also skip ***4.5.***  
     - List block devices to get the disk name (where disk device is), usually "/dev/sda", "/dev/vda", "/dev/nve0n1" or "/dev/mmcblk0" etc..  
     `# lsblk`  
     > NOTE: From here onwards we'll assume the disk and it's partition's names are `sda`, `sda1` and `sda2` respectively and one must adjust it to their actually names on their system accordingly.  
@@ -94,14 +94,13 @@ or
     > NOTE: The value should correspond with how many partitions we are making. Example should be `default 2` if this is the 2nd partition otherwise put in `2` or whatever correct value needed and press "Enter".  
     - Press "enter" on default First sector again.  
     - Press "enter" on default Last sector this time to use the remaining space if just creating one other partition `/root` or using LVM otherwise if more seperate partitions will be created, example: `/home` and/or `/swap` and/or `/var` then put in a fixed amount of space by repeating step ***4.3.*** for each but make sure to do `/root` last if no seperate `/home` partition or `/home` last if specified and let it have the remaining space by just pressing "Enter". Another option is to specifiy space for the last created partition (`/home`/`/root`) therefore we have leftover unused space to use in the future to possibily allocate to existing or create more partitions.  
-    > NOTE: General recommendations but can greatly differ 
-    `+60G` for /root
-    /root recommended at least 15-20G, more is better. If `/home` is created then user-data will be stored in `/home`. `root` will usually store what's installed from the package manager(s) therefore if many packages/software will be installed don't be afraid to increase the size, example `+80G` or more if disk has enough space.
-    `+4G` or general rule of thumb is 1x2 of RAM. for `/swap` though can use swapfile
-    `+10G` for `/var` or `/var/tmp`
+    > NOTE: General recommendations:  
+    > - `+60G` for `/root` or recommend at least 15-20G, more is better. If `/home` is created then user-data will be stored in `/home`. `/root` will usually store what's installed from the package manager(s) therefore if many packages/software will be installed don't be afraid to increase the size, example `+80G` or more if disk has enough space.  
+    > - `+4G` for `/swap` or the general rule of thumb is 1x2 of RAM. Instead of using a `/swap` partition one can use swapfile or  
+    > - `+10G` for `/var` or `/var/tmp`  
     - On Current type either:
     > NOTE: LVM requires `UEFI` therefore if `BIOS` then create default filesystem.  
-      - Press "enter" if default filesystem, if `/swap` then put in `8200`.  
+      - Press "enter" if default filesystem (example: `/root`/`/var`/`/home`), if `/swap` then put in `8200`.  
     - or  
       - Put in `8e00` to change the Current type code from Linux filesystem to Linux LVM if using LVM which will be continued in step ***4.5.***  
     - Save changes  
@@ -109,6 +108,50 @@ or
       - Type "y" to confirm and press "enter"  
     - List block devices again to check the new partitions  
     `# lsblk`  
+    > NOTE: Some example partition layouts:  
+
+    BIOS shared partition
+    > ```
+    > NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS  
+    > loop0    7:0    0 702.1M  1 loop /run/archiso/airootfs  
+    > sr0     11:0    1 816.3M  0 rom  
+    > sr1     11:1    1 153.5M  0 rom  
+    > vda    254:0    0    20G  0 disk  
+    > └─vda1 254:1    0    20G  0 part  
+
+    `/boot` or `/efi` and `/root`
+    > ```
+    > NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS  
+    > loop0    7:0    0 702.1M  1 loop /run/archiso/airootfs  
+    > sr0     11:0    1 816.3M  0 rom  
+    > sr1     11:1    1 153.5M  0 rom  
+    > vda    254:0    0    20G  0 disk  
+    > ├─vda1 254:1    0   512M  0 part  
+    > └─vda2 254:2    0  19.5G  0 part  
+
+    `/boot` or `/efi`, `/root`, `/swap` and `/home`  
+    > ```
+    > NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
+    > loop0    7:0    0 702.1M  1 loop /run/archiso/airootfs
+    > sr0     11:0    1 816.3M  0 rom
+    > sr1     11:1    1 153.5M  0 rom
+    > vda    254:0    0    20G  0 disk
+    > ├─vda1 254:1    0   512M  0 part
+    > ├─vda2 254:2    0     5G  0 part
+    > ├─vda3 254:3    0     4G  0 part
+    > └─vda4 254:4    0  10.5G  0 part
+
+    `/efi`, LUKS and LVM
+    > ```
+    > NAME           MAJ:MIN RM   SIZE RO TYPE  MOUNTPOINTS
+    > sda              8:0    0 465.8G  0 disk
+    > ├─sda1           8:1    0   200M  0 part  /boot
+    > └─sda2           8:2    0 465.6G  0 part
+    >   └─lvm        254:0    0 465.5G  0 crypt
+    >     ├─vg1-root 254:1    0    80G  0 lvm   /
+    >     ├─vg1-swap 254:2    0     4G  0 lvm   [SWAP]
+    >     └─vg1-home 254:3    0 381.5G  0 lvm   /home
+    > sr0             11:0    1  1024M  0 rom
 
     4.4. (Optional) Encrypt our main partition `sda2` using LUKS  
     - Load dm-crypt and dm-mod kernel modules  
