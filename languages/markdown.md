@@ -1,6 +1,6 @@
 # header/title `#`
 ## sub heading `##` or `###...` for even smaller headers
-This is a normal body of text and to go the next line we need to  
+This is a normal body of text and to go to the next line we need to  
 press space twice or `tab` and then enter `<CR>`  
 1. To make ordered list use a number and punctuation mark `1.`  
 
