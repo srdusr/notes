@@ -21,6 +21,7 @@ My personal notes on various topics related to Computer Science and Tech, for in
 │   └── 
 │
 ├── languages (C, Rust, etc...)
+│   ├── asm.md  #TODO: Still in progress
 │   ├── bash.md  #TODO: Still in progress
 │   ├── c.md
 │   ├── css.md  #TODO: Still in progress
