@@ -157,6 +157,12 @@ A few factors to consider are whether either remote/local are in a VM and what O
 
 
 - - -
+#### Tmux remote pairing
+* Make sure ssh is setup and use this command on the remote-machine  
+`$ tmux new-session -s pair`  
+* Connect to the remote tmux session  
+`$ ssh -t user@remote-machine tmux attach-session -t pair`  
+
 
 #### Trouble-shooting
 - Check or disable firewall
