@@ -21,19 +21,20 @@ My personal notes on various topics related to Computer Science and Tech, for in
 │   └── 
 │
 ├── languages (C, Rust, etc...)
-│   ├── c.md  #TODO: Still in progress
+│   ├── bash.md  #TODO: Still in progress
+│   ├── c.md
 │   ├── css.md  #TODO: Still in progress
 │   ├── go.md #TODO: Still in progress
 │   ├── haskell.md #TODO: Still in progress
 │   ├── html.md #TODO: Still in progress
 │   ├── java.md #TODO: Still in progress
-│   ├── javascript.md #TODO: Still in progress
+│   ├── javascript.md
 │   ├── lua.md #TODO: Still in progress
 │   ├── markdown.md
-│   ├── python.md #TODO: Still in progress
-│   ├── php.md #TODO: Still in progress
-│   ├── rust.md #TODO: Still in progress
-│   └── sql.md #TODO: Still in progress
+│   ├── python.md
+│   ├── php.md
+│   ├── rust.md
+│   └── sql.md
 │
 ├── linux
 │   ├── arch-install.md (Arch Linux installation)
