@@ -31,6 +31,7 @@ My personal notes on various topics related to Computer Science and Tech, for in
 │   ├── lua.md #TODO: Still in progress
 │   ├── markdown.md
 │   ├── python.md #TODO: Still in progress
+│   ├── php.md #TODO: Still in progress
 │   ├── rust.md #TODO: Still in progress
 │   └── sql.md #TODO: Still in progress
 │
