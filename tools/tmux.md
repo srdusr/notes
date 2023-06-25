@@ -206,6 +206,13 @@ $ `tmux attach-session -t mysession`
 `<prefix> )`  
 - - -
 
+#### SSH  
+* Make sure ssh is setup and use this command on the remote-machine  
+`$ tmux new-session -s pair`  
+* Connect to the remote tmux session  
+`$ ssh -t user@remote-machine tmux attach-session -t pair`  
+- - -
+
 #### Copy Mode  
 * Use vi keys  
 `:setw -g mode-keys vi`  
