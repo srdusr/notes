@@ -17,32 +17,36 @@ int x = 10;
 // Declaration without initialization  
 float y;  
 ```  
-  
+
 - Data Types  
-|Data | Type| Description|  
-| --- | --- | --- |  
-|int| Integer | |  
-|float| Floating point number | |  
-|double| Double precision floating point number | |  
-|char| Character | |  
-|bool| Boolean | |  
-|Operators|  
-|Operator| Description  
-|=| Assignment | |  
-|+| Addition| |  
-|-| Subtraction| |  
-|*| Multiplication| |  
-|/| Division| |  
-|%| Modulus| (remainder after division) |  
-|==| Equality| |  
-|!=| Inequality| |  
-|<| Less than| |  
-|>| Greater than| |  
-|<=| Less than or equal to| |  
-|>=| Greater than or equal to| |  
-|&&| Logical AND| |  
-|` | | |  
-|!| Logical NOT| |  
+
+| Data | Type | Description|  
+|  --- | --- | --- |  
+| int | Integer | |  
+| float | Floating point number | |  
+| double | Double precision floating point number | |  
+| char | Character | |  
+| bool | Boolean | |  
+
+- Operators  
+
+| Operator | Description | |   
+|  --- | --- | --- |  
+| = | Assignment | |  
+| + | Addition| |  
+| - | Subtraction| |  
+| * | Multiplication| |  
+| / | Division| |  
+| % | Modulus| (remainder after division) |  
+| == | Equality| |  
+| != | Inequality| |  
+| < | Less than| |  
+| > | Greater than| |  
+| <= | Less than or equal to| |  
+| >= | Greater than or equal to| |  
+| && | Logical AND| |  
+| \|\| | | |  
+| ! | Logical NOT| |  
   
 - - -  
   
