@@ -175,4 +175,10 @@ int *pointerName = &variableName;
 // Accessing value through pointer  
 int value = *pointerName;`  
 ```  
+- - -
 
+##### Input/Output:  
+- printf("Text");             // Prints text on the console  
+- scanf("%d", &<variable>);   // Reads input from the user  
+
+- - -
