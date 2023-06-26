@@ -183,9 +183,15 @@ int value = *pointerName;`
 
 - - -
 
-##### Memory Allocation:
-- malloc(size);     // Allocates a block of memory
-- calloc(n, size);  // Allocates an array of n elements, initialized to zero
-- free(pointer);    // Deallocates the memory block
+##### Memory Allocation:  
+- malloc(size);     // Allocates a block of memory  
+- calloc(n, size);  // Allocates an array of n elements, initialized to zero  
+- free(pointer);    // Deallocates the memory block  
+
+- - -
+
+##### Preprocessor Directives:
+- #include <header_file>     // Includes a header file  
+- #define <macro_name> <value>   // Defines a macro  
 
 - - -
