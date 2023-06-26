@@ -18,7 +18,7 @@ int x = 10;
 float y;  
 ```  
 
-- Data Types  
+ ###### Data Types  
 
 | Data | Type | Description|  
 |  --- | --- | --- |  
@@ -28,8 +28,8 @@ float y;
 | char | Character | Represents a single character, such as a letter or symbol |  
 | bool | Boolean | Represents a logical value, either true or false |  
 
-- Operators  
-  - Arithmetic Operators:
+ ###### Operators  
+- Arithmetic Operators:
 
 | Operator | Name | Description |   
 |  --- | --- | --- |  
@@ -119,10 +119,6 @@ switch (expression) {
                                 break;  
 }  
 ```  
-  
-- - -  
-  
-##### Loops  
 - For Loop  
 ```c  
 for (initialization; condition; update) {  
