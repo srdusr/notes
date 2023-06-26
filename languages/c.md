@@ -182,3 +182,10 @@ int value = *pointerName;`
 - scanf("%d", &<variable>);   // Reads input from the user  
 
 - - -
+
+##### Memory Allocation:
+- malloc(size);     // Allocates a block of memory
+- calloc(n, size);  // Allocates an array of n elements, initialized to zero
+- free(pointer);    // Deallocates the memory block
+
+- - -
