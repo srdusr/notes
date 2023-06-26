@@ -22,32 +22,76 @@ float y;
 
 | Data | Type | Description|  
 |  --- | --- | --- |  
-| int | Integer | |  
-| float | Floating point number | |  
-| double | Double precision floating point number | |  
-| char | Character | |  
-| bool | Boolean | |  
+| int | Integer | Represents whole numbers without a fractional component |  
+| float | Floating point number | Represents real numbers with a single-precision format |  
+| double | Double precision floating point number | Represents real numbers with a double-precision format |  
+| char | Character | Represents a single character, such as a letter or symbol |  
+| bool | Boolean | Represents a logical value, either true or false |  
 
 - Operators  
+  - Arithmetic Operators:
 
-| Operator | Description | |   
+| Operator | Name | Description |   
 |  --- | --- | --- |  
-| = | Assignment | |  
-| + | Addition| |  
-| - | Subtraction| |  
-| * | Multiplication| |  
-| / | Division| |  
-| % | Modulus| (remainder after division) |  
-| == | Equality| |  
-| != | Inequality| |  
-| < | Less than| |  
-| > | Greater than| |  
-| <= | Less than or equal to| |  
-| >= | Greater than or equal to| |  
-| && | Logical AND| |  
-| \|\| | | |  
-| ! | Logical NOT| |  
-  
+| + | Addition | Adds two operands |  
+| - | Subtraction | Subtracts the right operand from the left operand |  
+| * | Multiplication | Multiplies two operands |  
+| / | Division | Divides the left operand by the right operand |  
+| % | Modulus (remainder after division) | Computes the remainder after division of two operands |  
+
+  - Assignment Operators:
+
+| Operator | Name | Description |   
+|  --- | --- | --- |  
+| = | Assignment | Assigns a value to a variable |  
+| += | Addition Assignment | Adds right operand to the left operand and assigns the result to the left operand |
+| -= | Subtraction Assignment | Subtracts right operand from the left operand and assigns the result to the left operand |
+| *= | Multiplication Assignment | Multiplies the left operand by the right operand and assigns the result to the left operand |
+| /= | Division Assignment | Divides the left operand by the right operand and assigns the result to the left operand |
+| %= | Modulus Assignment | Computes the modulus of the left operand with the right operand and assigns the result to the left operand |
+
+  - Comparison Operators:
+
+| Operator | Name | Description |   
+|  --- | --- | --- |  
+| == | Equality | Checks if two operands are equal |  
+| != | Inequality | Checks if two operands are not equal |  
+| < | Less than | Checks if the left operand is less than the right operand |  
+| > | Greater than | Checks if the left operand is greater than the right operand |  
+| <= | Less than or equal to | Checks if the left operand is less than or equal to the right operand |  
+| >= | Greater than or equal to | Checks if the left operand is greater than or equal to the right operand |  
+
+  - Increment and Decrement Operators
+
+| Operator | Name | Description |   
+|  --- | --- | --- |  
+| ++ | Increment | Increments the value of a variable by 1 |
+| -- | Decrement | Decrements the value of a variable by 1 |
+
+  - Bitwise Shitfers
+
+| Operator | Name | Description |   
+|  --- | --- | --- |  
+| << | Left Shift | Shifts the bits of the left operand to the left by the number of positions specified by the right operand |
+| >> | Right Shift | Shifts the bits of the left operand to the right by the number of positions specified by the right operand |
+
+  - Bitwise Operators
+
+| Operator | Name | Description |   
+|  --- | --- | --- |  
+| &  | Bitwise AND | Performs bitwise AND operation |
+| \| | Bitwise OR | Performs bitwise OR operation |
+| ^  | Bitwise XOR | Performs bitwise XOR (exclusive OR) operation |
+| ~  | Bitwise NOT | Inverts the bits |
+
+  - Logical Operators
+
+| Operator | Name | Description |   
+|  --- | --- | --- |  
+| && | Logical AND | Performs logical AND operation |  
+| \|\| |Logical OR | Performs logical OR operation |  
+| ! | Logical NOT | Negates the value of a condition |  
+
 - - -  
   
 ##### Control Structures  
