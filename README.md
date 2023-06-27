@@ -17,8 +17,8 @@ My personal notes on various topics related to Computer Science and Tech, for in
 │   └── zathura.md
 │
 ├── compsci (Computer Science)
-│   ├── 
-│   └── 
+│   ├── algorithms
+│   └── data-structures.md
 │
 ├── languages (C, Rust, etc...)
 │   ├── asm.md  #TODO: Still in progress
