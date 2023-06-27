@@ -55,7 +55,8 @@ My personal notes on various topics related to Computer Science and Tech, for in
 │   ├── git.md
 │   ├── tmux.md
 │   ├── ssh.md
-│   └── vim.md
+│   ├── vim.md
+│   └── vscode.md
 │
 ├── virt (docker, kubernetes, VMs)
 │   ├── docker.md #TODO: Still in progress
