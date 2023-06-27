@@ -17,10 +17,14 @@ My personal notes on various topics related to Computer Science and Tech, for in
 │   └── zathura.md
 │
 ├── compsci (Computer Science)
-│   ├── algorithms
+│   ├── algorithms.md
 │   └── data-structures.md
 │
-├── languages (C, Rust, etc...)
+├── dev (Development)
+│   ├── 
+│   └── 
+│
+├── languages (Programming languages, etc...)
 │   ├── asm.md  #TODO: Still in progress
 │   ├── bash.md  #TODO: Still in progress
 │   ├── c.md
