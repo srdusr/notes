@@ -38,7 +38,7 @@ My personal notes on various topics related to Computer Science and Tech, for in
 │   ├── lua.md #TODO: Still in progress
 │   ├── markdown.md
 │   ├── python.md
-│   ├── php.md
+│   ├── php.md (Includes Laravel)
 │   ├── rust.md
 │   └── sql.md
 │
