@@ -38,6 +38,7 @@
   3. Set up the alias 'config'  
   ```bash
   $ alias config='/usr/bin/git --git-dir=<path to .cfg’s Git directory> --work-tree=$HOME'
+  alias config='git --git-dir=$HOME/.cfg --work-tree=$HOME'
   ```
   4. Set local configuration into .cfg to ignore untracked files  
   ```bash
@@ -123,6 +124,35 @@ other's existence:
 ```bash
 $ git pull origin <branch> --allow-unrelated-histories
 ```
+Diff between commits
+```
+$ git log
+$ git diff (checkout_id):file.txt file.txt
+or
+$ git diff <commit_id1> <commit_id2>
+or
+$ git difftool <commit_id1> <commit_id2>
+
+```
+
+
+If the top commit is pointed to by HEAD then you can do something like this:
+
+commit1 -> HEAD
+commit2 -> HEAD~1
+commit3 -> HEAD~2
+
+Diff between the first and second commit:
+
+git diff HEAD~1 HEAD
+
+Diff between first and third commit:
+
+git diff HEAD~2 HEAD
+
+Diff between second and third commit:
+
+git diff HEAD~2 HEAD~1
 - - -
 #### Miscellaneous
 Find out size of a repo before cloning it  
