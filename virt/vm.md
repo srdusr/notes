@@ -158,5 +158,7 @@ qemu-system-x86_64 -enable-kvm \
 -net nic -net user,hostname=archlinux \
 -name "archlinux-x86_64"
 
+-snapshot archvm \
+
 ###### android-x86:
 1. Download latest ISO from android-x86.org
