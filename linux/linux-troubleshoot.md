@@ -11,16 +11,31 @@
   - Can show and modify kernal routing tables (+/- ARP cache entries)  
 - - -
 #### Reload a program from tty if gui becomes unresponsive 
-  `$ DISPLAY=:<n> <name of program>`  
+```bash
+$ DISPLAY=:<n> <name of program>  
+```
   Example:  
 ``` bash
-  `$ DISPLAY=:0 xterm &`  
-  `$ DISPLAY=:0 sxhkd &`  
+$ DISPLAY=:0 xterm &  
+$ DISPLAY=:0 sxhkd &  
 ```
 - - -
 #### Fix pacman keyring errors 
-``` bash
-  `$ pacman-key --init && pacman-key --populate archlinuxarm`  
-  `$rm /var/lib/pacman/db.lck`  
+```bash
+$ pacman-key --init && pacman-key --populate archlinuxarm  
+$ rm /var/lib/pacman/db.lck  
 ```
 - - -
+#### Clean package manager's cache (apt/pacman)
+apt:
+```bash
+$ sudo apt-get clean
+$ sudo apt-get autoclean
+```
+pacman:
+```bash
+$ paccache -r # requires pacman-contrib
+$ sudo pacman -Scc
+```
+- - -
+
