@@ -11,17 +11,17 @@ My personal notes on various topics related to Computer Science and Tech, for in
 │   ├── colors.md (256 colors and their values)
 │   ├── fzf.md
 │   ├── ranger.md
-│   ├── regex.md (Regular expressions manipulation)
+│   ├── regex.md (Regular expressions manipulation) #TODO: Still in progress
 │   ├── syntax.wiki
 │   ├── termux.md
 │   └── zathura.md
 │
 ├── compsci (Computer Science)
-│   ├── algorithms.md
-│   └── data-structures.md
+│   ├── algorithms.md #TODO: Still in progress
+│   └── data-structures.md #TODO: Still in progress
 │
 ├── dev (Development)
-│   ├── 
+│   ├── mobile.md (android/ios) #TODO: Still in progress
 │   └── 
 │
 ├── languages (Programming languages, etc...)
@@ -49,11 +49,11 @@ My personal notes on various topics related to Computer Science and Tech, for in
 │   └── linux-lvm.md
 │
 ├── network
-│   ├── firewall.md
+│   ├── firewall.md #TODO: Still in progress
 │   └── 
 │
 ├── security
-│   ├── cryptography.md
+│   ├── cryptography.md #TODO: Still in progress
 │   └── 
 │
 ├── tools
@@ -61,7 +61,7 @@ My personal notes on various topics related to Computer Science and Tech, for in
 │   ├── tmux.md
 │   ├── ssh.md
 │   ├── vim.md
-│   └── vscode.md
+│   └── vscode.md #TODO: Still in progress
 │
 ├── virt (docker, kubernetes, VMs)
 │   ├── docker.md #TODO: Still in progress
