@@ -22,7 +22,7 @@ My personal notes on various topics related to Computer Science and Tech, for in
 │
 ├── dev (Development)
 │   ├── mobile.md (android/ios) #TODO: Still in progress
-│   └── 
+│   └── web.md #TODO: Still in progress
 │
 ├── languages (Programming languages, etc...)
 │   ├── asm.md  #TODO: Still in progress
