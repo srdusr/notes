@@ -10,6 +10,7 @@ My personal notes on various topics related to Computer Science and Tech, for in
 │   ├── cmus.md
 │   ├── colors.md (256 colors and their values)
 │   ├── fzf.md
+│   ├── nvim-tree.md
 │   ├── ranger.md
 │   ├── regex.md (Regular expressions manipulation) #TODO: Still in progress
 │   ├── syntax.wiki
