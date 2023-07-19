@@ -48,6 +48,9 @@
   ```bash
   $ config checkout
   ```
+config push --set-upstream origin main
+git symbolic-ref refs/remotes/origin/HEAD refs/remotes/origin/master
+git fetch origin master:refs/remotes/origin/master
 #### Use git subtree to sync other repos into dotfiles  
   1. First make sure dotfiles is up-to date or commit/push/reset all changes
   otherwise this error message will show:  `Working tree has modifications.  Cannot add.`  
