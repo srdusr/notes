@@ -112,14 +112,14 @@ y = None
 ###### Data Types
 | Data | Type | Description |
 |  --- | --- | --- |  
-| int | Integer | Represents whole numbers without a fractional component |
-| float | Float | Represents real numbers with a single-precision format |
+| int | Integer | Represents whole numbers without a fractional component, can convert floats with int() but will always trunicate to the base number (does not round off) |
+| float | Float | Represents real numbers with a single-precision format (numbers with decimal points), can convert integers to floats with float() |
 | str | String | Represents a sequence of characters |
 | bool | Boolean | Represents a logical value, either True or False |
-| list | List | Represents an ordered, mutable collection of elements |
-| tuple | Tuple | Represents an ordered, immutable collection of elements |
-| dict | Dictionary | Represents a collection of key-value pairs |
-| set | Set | Represents an unordered collection of unique elements |
+| list | List | Represents an ordered, mutable collection of elements that can not have duplicates |
+| tuple | Tuple | Represents an ordered, immutable collection of elements that can have duplicates |
+| set | Set | Represents an unordered collection of unique elements (cannot contain duplicates) that can be modified |
+| dict | Dictionary | Represents a collection of key/value pairs that can be modified but cannot have duplicate keys |
 
 ###### Arithmetic Operators
 | Operator | Name | Description |
@@ -128,9 +128,27 @@ y = None
 | x `-` y | Subtraction | |
 | x `*` y | Multiplication | |
 | x `/` y | Division | |
-| x `%` y | Modulus | |
+| x `%` y | Modulus | Modulo operator, gets the remainder of x divided by y |
 | x `**` y | Exponentiation | |
 | x `//` y | Integer Division | |
+
+###### Comparison Operators
+| Operator | Name | Description |
+|  --- | --- | --- |  
+| x `==` y | Equality | Checks if two operands are equal |  
+| x `!=` y | Inequality | Checks if two operands are not equal |  
+| x `>` y | Less than | Checks if the left operand is less than the right operand |  
+| x `<` y | Greater than | Checks if the left operand is greater than the right operand |  
+| x `>=` y | Less than or equal to | Checks if the left operand is less than or equal to the right operand |  
+| x `<=` y | Greater than or equal to | Checks if the left operand is greater than or equal to the right operand |  
+
+###### Logical Operators
+| Operator | Name | Description |   
+|  --- | --- | --- |  
+| `and` | Logical AND | Performs logical AND operation, returns True if both statements are true |  
+| `or` | Logical OR | Performs logical OR operation, returns True if at least one statement is true |  
+| `not` | Logical NOT | Negates the value of a condition, unary performs opposite of the result of the expression |  
+> NOTE: Unary means this operator performs its operation on just one conditional statement. Conversely, `and` and `or` have a left side and a right side operation, and are thus, binary operators.)
 
 ###### String Operations
 ```python
@@ -169,7 +187,7 @@ else:
 ```python
 def function_name(parameter1, parameter2):
     # Code to execute
-    return <result>  # Optional return statement
+    return <result>  # Optional return statement, but if used exits the function completely, can have none, one or more than one return statement
 ```
 
 ###### Data Structures
