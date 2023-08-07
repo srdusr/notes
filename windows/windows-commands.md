@@ -40,3 +40,13 @@
   > NOTE: Replace `disabled` with `automatic` to allow at startup
 
 ---
+
+#### <u>Allow script execution</u>
+
+- Run the following command in PowerShell as an administrator:
+
+```dos
+  Set-ExecutionPolicy RemoteSigned
+```
+
+---
