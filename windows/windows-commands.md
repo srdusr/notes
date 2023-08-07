@@ -1,32 +1,44 @@
 #### <u>Shutdown Options</u>
 
 - Restart computer into BIOS  
-  `shutdown /r /fw /f /t 0`
+```dos
+shutdown /r /fw /f /t 0
+```
 - Shutdown  
-  `shutdown /s`
+```dos
+shutdown /s
+```
 - Restart  
-  `shutdown /r`
+```dos
+shutdown /r
+```
 
 ---
 
 #### <u>BCDEdit (Boot Configuration Data) Command-line Options</u>
 
 - Enable safe mode via commandline  
-  `bcedit /set {default} bootmenupolicy legacy`
+```dos
+bcedit /set {default} bootmenupolicy legacy
+```
 - Disable hyper-v  
-  `bcdedit /set hypervisorlaunchtype off`
+```dos
+bcdedit /set hypervisorlaunchtype off
+```
 - Enable hyper-v  
-  `bcdedit /set hypervisorlaunchtype auto`
+```dos
+bcdedit /set hypervisorlaunchtype auto
+```
 
 ---
 
 #### <u>Disable Run Privileges bell</u>
 
 - Turn off beeping
-  ```cmd
-  net stop beep
-  ```
-  > NOTE: Replace `stop` with `start` to allow the service to work again. Defaults back to on at startup.
+```cmd
+net stop beep
+```
+> NOTE: Replace `stop` with `start` to allow the service to work again. Defaults back to on at startup.
 - Too disable at startup
   - cmd:
   ```cmd
