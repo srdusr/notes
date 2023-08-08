@@ -39,6 +39,39 @@ Shading:
     ASCII code 254 = ■ ( black square )
 - - -
 
+Common characters:
+
+    ASCII code 156 = £ ( Pound sign ; symbol for the pound sterling )
+    ASCII code 158 = × ( Multiplication sign )
+    ASCII code 159 = ƒ ( Function sign ; f with hook sign ; florin sign )
+    ASCII code 169 = ® ( Registered trademark symbol )
+    ASCII code 170 = ¬ ( Logical negation symbol )
+    ASCII code 171 = ½ ( One half )
+    ASCII code 172 = ¼ ( Quarter, one fourth )
+    ASCII code 184 = © ( Copyright symbol )
+    ASCII code 190 = ¥ ( YEN and YUAN sign )
+    ASCII code 241 = ± ( Plus-minus sign )
+    ASCII code 242 = ‗ ( underline or underscore )
+    ASCII code 243 = ¾ ( three quarters, three-fourths )
+    ASCII code 244 = ¶ ( Paragraph sign or pilcrow ; end paragraph mark )
+    ASCII code 245 = § ( Section sign )
+    ASCII code 246 = ÷ ( The division sign ; Obelus )
+    ASCII code 247 = ¸ ( cedilla )
+    ASCII code 248 = ° ( Degree symbol )
+    ASCII code 251 = ¹ ( Superscript one, exponent 1, first power )
+    ASCII code 252 = ³ ( Superscript three, exponent 3, cube, third power )
+    ASCII code 253 = ² ( Superscript two, exponent 2, square, second power
+    ASCII code 255 = nbsp ( Non-breaking space or no-break space )
+
+    ASCII code 88 = X (Uppercase X)
+    ASCII code 120 = x (Lowercase x)
+    ASCII code 10007 = ✗ (Heavy X)
+    ✅	White Heavy Check Mark	&#x2705;
+    ✓	Check Mark	&#x2713;
+    ✔	Heavy Check Mark	&#x2714;
+    🗸	Light Check Mark	&#x1F5F8;
+- - -
+
 #### ASCII character and symbol values  
 Dec | Hex | Oct | Bin | Char | Dec | Hex | Oct | Bin | Char | Dec | Hex | Oct | Bin | Char | Dec | Hex | Oct | Bin | Char |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|  
