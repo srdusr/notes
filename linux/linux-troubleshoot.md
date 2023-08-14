@@ -38,4 +38,7 @@ $ paccache -r # requires pacman-contrib
 $ sudo pacman -Scc
 ```
 - - -
-
+#### Unlocking a Linux User Account After Too Many Failed Attempts
+```bash
+$ faillock --user $USER --reset
+```
