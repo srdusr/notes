@@ -1,9 +1,11 @@
 # Notes
+
 My personal notes on various topics related to Computer Science and Tech, for in case I forget and available to anyone else who may find some use/valuable information. Also includes cheat sheets, guides, my blog posts and etc...
 
-**"Write for another person because future you is another person."** - ***Unknown***
+**"Write for another person because future you is another person."** - **_Unknown_**
 
 #### Available notes:
+
 ```bash
 ├── cheatsheets
 │   ├── ascii.md
@@ -27,11 +29,12 @@ My personal notes on various topics related to Computer Science and Tech, for in
 │   └── web.md #TODO: Still in progress
 │
 ├── languages (Programming languages, etc...)
-│   ├── asm.md  #TODO: Still in progress
-│   ├── bash.md  #TODO: Still in progress
+│   ├── asm.md #TODO: Still in progress
+│   ├── bash.md #TODO: Still in progress
 │   ├── c.md
-│   ├── css.md  #TODO: Still in progress
-│   ├── dart.md  #TODO: Still in progress
+│   ├── c#.md #TODO: Still in progress
+│   ├── css.md #TODO: Still in progress
+│   ├── dart.md #TODO: Still in progress
 │   ├── go.md #TODO: Still in progress
 │   ├── haskell.md #TODO: Still in progress
 │   ├── html.md #TODO: Still in progress
@@ -52,11 +55,11 @@ My personal notes on various topics related to Computer Science and Tech, for in
 │
 ├── network
 │   ├── firewall.md #TODO: Still in progress
-│   └── 
+│   └──
 │
 ├── security
 │   ├── cryptography.md #TODO: Still in progress
-│   └── 
+│   └──
 │
 ├── tools
 │   ├── git.md
@@ -74,4 +77,3 @@ My personal notes on various topics related to Computer Science and Tech, for in
     ├── windows-commands.md (cmd)
     └── windows-shortcuts.md
 ```
-
