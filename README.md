@@ -24,6 +24,7 @@ My personal notes on various topics related to Computer Science and Tech, for in
 ├── compsci (Computer Science)
 │   ├── algorithms.md #TODO: Still in progress
 │   ├── data-structures.md #TODO: Still in progress
+│   ├── database.md #TODO: Still in progress
 │   └── design-patterns.md #TODO: Still in progress
 │
 ├── dev (Development)
