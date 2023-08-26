@@ -363,36 +363,41 @@ or
   :%w !pbcopy # copy the whole file 
   :r !pbpaste # paste from the clipboard 
 ```
+---
 
-* To open the current window in a new tab (maximize) with the cursor in the same place, enter  
-    \: `tab sp` # splits the current window into a new tab  
-     or  
-    `<Ctrl-w>T`  
-* To close the current window, press  
-    `<Ctrl-w>c`  
+- Open the current window in a new tab (maximize) with the cursor in the same place:
+  - Type `:tab sp` to split the current window into a new tab.
+  - Alternatively, press `<Ctrl-w>T`.
 
-* To make a file executable  
-    \: `! chmod +x %`  
+- To close the current window, press `<Ctrl-w>c`.
 
-* Shortcut command to backup current file  
-    \: `!cp % %.backup`  
+- Make a file executable:
+  - Type `:! chmod +x %`.
 
-* Use hjkl... at vim's command history mode by using `<C-f>` or immediatly go
-  into history mode `q:` and exit by pressing `<enter>`
+- Shortcut command to backup the current file:
+  - Type `:!cp % %.backup`.
 
-* Split existing buffer into a horizontal/vertical window  
-    \: `sb` # horizontal  
-    \: `vert sb` # vertical  
-    \: `sb<n>` # where n is a specific buffer number
-- - -
+- Use `hjkl` keys in Vim's command history mode:
+  - Use `<C-f>` to navigate through history.
+  - Enter command history mode with `q:`.
+  - Exit command history mode by pressing `<Enter>`.
 
+- Split an existing buffer into a horizontal or vertical window:
+  - Horizontal split: Type `:sb`.
+  - Vertical split: Type `:vert sb`.
+  - Specific buffer number: Type `:sb<n>` (replace `<n>` with the buffer number).
 
-vim +10 <file_name>            - opens the file at line 10
-vim +/bash cronjob-lab.yml     - opens the file cronjob-lab.yml on the first occurence of bash
+- Open a file at a specific line:
+  - Type `vim +10 <file_name>` to open the file at line 10.
+  - Type `vim +/bash vim.md` to open the file `vim.md` at the first occurrence of "bash".
 
-vim scp://balasundaramm@mgmt-bst:22/~/automation/test-file.txt - Edit a remote file via scp
+- Edit a remote file via SCP:
+  - Type `vim scp://username@hostname:port/path/to/file`
 
-gg=G            -   Format HTML. Make sure FileType is set to html with :setf html
-CTRL+n          -   Press after typing part of a word. It scrolls down the list of all previously used words
-CTRL+p          -   Press after typing part of a word. It scrolls up the list of all previously used words
+- Format HTML code:
+  - While editing an HTML file, use `gg=G`. Ensure that the FileType is set to HTML with `:setf html`.
+
+- Navigate through previously used words:
+  - Press `<Ctrl-n>` after typing part of a word to scroll down the list of previously used words.
+  - Press `<Ctrl-p>` after typing part of a word to scroll up the list of previously used words.
 
