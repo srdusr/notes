@@ -115,6 +115,14 @@ Create a commit with a message about the commit:
 ```bash
 $ git commit -m <file>
 ```
+Make main branch
+```bash
+git branch -M main
+```
+Add remote server repository
+```bash
+git remote add origin https://github.com/srdusr/grimoire.git
+```
 Push the changes/commits onto repo:
 ```bash
 $ git push -u origin <branch>
