@@ -117,12 +117,13 @@ $ git commit -m <file>
 ```
 Make main branch
 ```bash
-git branch -M main
+$ git branch -M main
 ```
 Add remote server repository
 ```bash
-git remote add origin https://github.com/srdusr/grimoire.git
+$ git remote add origin https://github.com/srdusr/grimoire.git
 ```
+> NOTE: To remove server: `git remote remove origin` or change url `git remote set-url origin git://new.url.here`
 Push the changes/commits onto repo:
 ```bash
 $ git push -u origin <branch>
