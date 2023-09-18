@@ -171,6 +171,16 @@ $ git remote add origin https://github.com/srdusr/grimoire.git
 $ git push -u origin <branch>
 ```
 
+Fetch the most recent changes/commits from the remote branch/repository
+> NOTE: make sure to checkout to the desired branch first, example: `git checkout main`
+```
+$ git fetch origin
+```
+or 
+```
+$ git fetch origin main:refs/remotes/origin/main
+```
+
 Reset the local main branch to remote repository aka...  
 Delete the most recent commit, destroying the work you've done:
 
