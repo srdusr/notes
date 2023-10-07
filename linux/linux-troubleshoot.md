@@ -33,7 +33,7 @@ $ DISPLAY=:0 sxhkd &
 
 ```bash
 $ pacman-key --init && pacman-key --populate archlinuxarm
-$ rm /var/lib/pacman/db.lck
+$ sudo rm /var/lib/pacman/db.lck
 ```
 
 ---
