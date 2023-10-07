@@ -7,9 +7,10 @@
 
 * Check ip address  
 > NOTE:  
-    - lo usually stands for the loopback interface (localhost)  
-    - wlan usually stands for a wireless networking interface  
+    - lo stands for the loopback interface (localhost)  
+    - wlan stands for a wireless networking interface  
     - rmnet interfaces are usually associated with cellular connections and usb tethering  
+
   * Linux  
 `$ ip addr show | grep "inet "`  
 `$ ifconfig`  
