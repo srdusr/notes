@@ -6,11 +6,6 @@
 `$ whoami`  
 
 * Check ip address  
-> NOTE:  
-    - lo stands for the loopback interface (localhost)  
-    - wlan stands for a wireless networking interface  
-    - rmnet interfaces are usually associated with cellular connections and usb tethering  
-
   * Linux  
 `$ ip addr show | grep "inet "`  
 `$ ifconfig`  
@@ -22,6 +17,11 @@
 
   * Windows  
 `$ ipconfig`  
+> NOTE:  
+    - lo stands for the loopback interface (localhost)  
+    - wlan stands for a wireless networking interface  
+    - rmnet interfaces are usually associated with cellular connections and usb tethering  
+
 > NOTE: The IP Address we use will usually be the one not similar to 127.0.0.1 (localhost) but rather a different string of numbers, ignore any forward slash and the numbers after it  
 > Example:  
 > `$ ip addr show | grep "inet "`
@@ -166,10 +166,10 @@ A few factors to consider are whether either remote/local are in a VM and what O
 
 
 #### Trouble-shooting
-- Check or disable firewall
-`$ sudo ufw status`
-`$ sudo ufw disable`
-`$ sudo ufw reload`
-`$ sudo ufw allow port/tcp` # if default port 22
-`$ sudo ufw allow 8022/tcp` # if using specific port
+- Check or disable firewall  
+`$ sudo ufw status`  
+`$ sudo ufw disable`  
+`$ sudo ufw reload`  
+`$ sudo ufw allow port/tcp` # if default port 22  
+`$ sudo ufw allow 8022/tcp` # if using specific port  
 
