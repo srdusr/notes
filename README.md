@@ -50,15 +50,19 @@ My personal notes on various topics related to Computer Science and Tech, for in
 │   ├── rust.md
 │   └── sql.md
 │
-├── linux
-│   ├── arch-install.md (Arch Linux installation)
-│   ├── linux-commands.md (bash/zsh)
-│   ├── linux-troubleshoot.md
-│   └── linux-lvm.md
-│
 ├── network
 │   ├── firewall.md #TODO: Still in progress
 │   └──
+│
+├── os
+│   ├── linux
+│   │   ├── arch-install.md (Arch Linux installation)
+│   │   ├── linux-commands.md (bash/zsh)
+│   │   ├── linux-troubleshoot.md
+│   │   └── linux-lvm.md
+│   └── windows
+│       ├── windows-commands.md (cmd)
+│       └── windows-shortcuts.md
 │
 ├── security
 │   ├── cryptography.md #TODO: Still in progress
@@ -71,12 +75,8 @@ My personal notes on various topics related to Computer Science and Tech, for in
 │   ├── vim.md
 │   └── vscode.md #TODO: Still in progress
 │
-├── virt (docker, kubernetes, VMs)
-│   ├── docker.md #TODO: Still in progress
-│   ├── kubernetes.md #TODO: Still in progress
-│   └── vm.md (virtual machines including QEMU/KVM and virtualbox)
-│
-└── windows
-    ├── windows-commands.md (cmd)
-    └── windows-shortcuts.md
+└── virt (docker, kubernetes, VMs)
+    ├── docker.md #TODO: Still in progress
+    ├── kubernetes.md #TODO: Still in progress
+    └── vm.md (virtual machines including QEMU/KVM and virtualbox)
 ```
