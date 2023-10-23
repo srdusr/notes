@@ -62,6 +62,7 @@ My personal notes on various topics related to Computer Science and Tech, for in
 │   │   ├── linux-commands.md (bash/zsh)
 │   │   ├── linux-troubleshoot.md
 │   │   └── linux-lvm.md
+│   ├── macos
 │   └── windows
 │       ├── windows-commands.md (cmd)
 │       └── windows-shortcuts.md
