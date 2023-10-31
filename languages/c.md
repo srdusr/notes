@@ -1,7 +1,30 @@
 ## C Programming  
 
+### Hello World!
+
+```c
+#include <stdio.h> // [Include libraries (standard input/output library)]
+/*
+|--------------------- [Return type is an integer(int), if not specified will default to int]
+|   |----------------- [Function (main)]
+|   |   |------------- [Argument list (none)]
+V   V   V*/
+int main()
+{ //<---------- [Statements, enclosed with braces({}), each statement will have a statement terminator which is a semi-colon(;)]
+    /*|*/  printf("Hello, World!\n");  // [Prints 'Hello, World!' to the console (display output)]
+    /*|*/  return 0;                   // [Signals successful completion of the program/end of the function (exit code 0)]
+} //<-|
+/*
+`#include <stdio.h>`: This line is a preprocessor directive that includes the standard input/output library (stdio.h). It allows the program to use input/output functions like printf.
+`int`: Return Type, the int before main() indicates that the function returns an integer value. The value returned from main() serves as an exit status code that is usually returned to the operating system to signal whether the program executed successfully or encountered an error.
+`main()`: Declares the main function, which serves as the entry point of the program. All other functions in the program are typically called from main.
+`printf("Hello, World!\n");`: The printf function is used to output the string "Hello, World!\n" to the console. The \n is an escape sequence representing a newline character, moving the cursor to the next line after printing.
+`return 0;`: This line marks the end of the main function and the program. It returns an exit status of 0 to the operating system, indicating successful execution.
+*/
+```
+
 ### Basic Syntax  
-- Comments  
+###### Comments  
 ```c  
  // This is a single-line comment  
   
@@ -9,7 +32,7 @@
     multi-line comment */  
 ```  
   
-- Variables  
+###### Variables  
 ```c  
 // Declaration and initialization  
 int x = 10;  
@@ -68,7 +91,7 @@ float y;
 | ++ | Increment | Increments the value of a variable by 1 |
 | -- | Decrement | Decrements the value of a variable by 1 |
 
-  - Bitwise Shitfers
+  - Bitwise Shifters
 
 | Operator | Name | Description |   
 |  --- | --- | --- |  
@@ -94,7 +117,7 @@ float y;
 
 - - -  
   
-##### Control Structures  
+###### Control Structures  
 - Conditional Statements  
 ```c  
 if (condition) {  
@@ -142,7 +165,7 @@ do {
   
 - - -  
   
-##### Functions  
+###### Functions  
 ```c  
 // Function prototype  
 returnType functionName(argumentType argumentName);  
@@ -156,7 +179,7 @@ returnType functionName(argumentType argumentName) {
   
 - - -  
   
-##### Arrays  
+###### Arrays  
 ```c  
 // Declaration and initialization  
 int arrayName[size] = {value1, value2, value3};  
@@ -177,20 +200,20 @@ int value = *pointerName;`
 ```  
 - - -
 
-##### Input/Output:  
+###### Input/Output:  
 - printf("Text");             // Prints text on the console  
 - scanf("%d", &<variable>);   // Reads input from the user  
 
 - - -
 
-##### Memory Allocation:  
+###### Memory Allocation:  
 - malloc(size);     // Allocates a block of memory  
 - calloc(n, size);  // Allocates an array of n elements, initialized to zero  
 - free(pointer);    // Deallocates the memory block  
 
 - - -
 
-##### Preprocessor Directives:
+###### Preprocessor Directives:
 - #include <header_file>     // Includes a header file  
 - #define <macro_name> <value>   // Defines a macro  
 
