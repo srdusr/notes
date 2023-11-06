@@ -10,16 +10,16 @@
 |   |   |------------- [Argument list (none)]
 V   V   V*/
 int main()
-{ //<---------- [Statements, enclosed with braces({}), each statement will have a statement terminator which is a semi-colon(;)]
+{ //<---------- [Statements, braces({}) encapsulates a block of code but can be ommited if there is only a single line, each statement will have a statement terminator which is a semi-colon(;)]
     /*|*/  printf("Hello, World!\n");  // [Prints 'Hello, World!' to the console (display output)]
-    /*|*/  return 0;                   // [Signals successful completion of the program/end of the function (exit code 0)]
+    /*|*/  return 0;                   // [Return value, signals successful completion of the program/end of the function (exit code 0)]
 } //<-|
 /*
 `#include <stdio.h>`: This line is a preprocessor directive that includes the standard input/output library (stdio.h). It allows the program to use input/output functions like printf.
 `int`: Return Type, the int before main() indicates that the function returns an integer value. The value returned from main() serves as an exit status code that is usually returned to the operating system to signal whether the program executed successfully or encountered an error.
 `main()`: Declares the main function, which serves as the entry point of the program. All other functions in the program are typically called from main.
 `printf("Hello, World!\n");`: The printf function is used to output the string "Hello, World!\n" to the console. The \n is an escape sequence representing a newline character, moving the cursor to the next line after printing.
-`return 0;`: This line marks the end of the main function and the program. It returns an exit status of 0 to the operating system, indicating successful execution.
+`return 0;`: Return Value, this line marks the end of the main function and the program. It returns an exit status of 0 to the operating system, indicating successful execution.
 */
 ```
 
@@ -33,6 +33,7 @@ int main()
 ```  
   
 ###### Variables  
+- All variables must be declared before used, usually at the beginning of the function before any executable statements. A declaration announces the properties of the variables, it consists of a type name and a list of variables
 ```c  
 // Declaration and initialization  
 int x = 10;  
@@ -48,8 +49,10 @@ float y;
 | int | Integer | Represents whole numbers without a fractional component |  
 | float | Floating point number | Represents real numbers with a single-precision format |  
 | double | Double precision floating point number | Represents real numbers with a double-precision format |  
-| char | Character | Represents a single character, such as a letter or symbol |  
+| char | Character | Represents a single character, such as a letter or symbol (single byte) |  
 | bool | Boolean | Represents a logical value, either true or false |  
+| short | Short integer |  
+| long | Long integer |  
 
  ###### Operators  
 - Arithmetic Operators:
