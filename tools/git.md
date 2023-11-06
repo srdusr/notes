@@ -161,7 +161,7 @@ $ git branch -M main
 Add remote server repository
 
 ```bash
-$ git remote add origin https://github.com/srdusr/grimoire.git
+$ git remote add origin https://github.com/<username>/<repo>.git
 ```
 
 > NOTE: To remove server: `git remote remove origin` or change url `git remote set-url origin git://new.url.here`
@@ -170,6 +170,7 @@ $ git remote add origin https://github.com/srdusr/grimoire.git
 ```bash
 $ git push -u origin <branch>
 ```
+> NOTE: Branch name should be *main* unless otherwise set to a different branch name
 
 Fetch the most recent changes/commits from the remote branch/repository
 > NOTE: make sure to checkout to the desired branch first, example: `git checkout main`
