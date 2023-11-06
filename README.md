@@ -28,7 +28,7 @@ My personal notes on various topics related to Computer Science and Tech, for in
 │   └── design-patterns.md #TODO: Still in progress
 │
 ├── dev (Development)
-│   ├── embedded-systems.md (android/ios) #TODO: Still in progress
+│   ├── embedded-systems.md #TODO: Still in progress
 │   ├── mobile.md (android/ios) #TODO: Still in progress
 │   └── web.md #TODO: Still in progress
 │
