@@ -8,7 +8,7 @@
 * Check ip address  
   * Linux  
 `$ ip addr show | grep "inet "`  
-`$ ifconfig`  
+`$ ifconfig # requires net-tools`  
 `$ nmcli -p device show`  
 `$ ip route get 1.2.3.4 | awk '{print $7}'`  
 `$ curl ifconfig.me`  
