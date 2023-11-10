@@ -173,3 +173,7 @@ A few factors to consider are whether either remote/local are in a VM and what O
 `$ sudo ufw allow port/tcp` # if default port 22  
 `$ sudo ufw allow 8022/tcp` # if using specific port  
 
+- Connection refused
+  - Check for port conflicts
+  `$ sudo lsof -i :<port-number>` # Replace port-number, example 22
+
