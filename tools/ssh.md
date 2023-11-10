@@ -166,6 +166,8 @@ A few factors to consider are whether either remote/local are in a VM and what O
 
 
 #### Trouble-shooting
+- Test connectivity locally  
+`$ ssh localhost -p 22`
 - Check or disable firewall  
 `$ sudo ufw status`  
 `$ sudo ufw disable`  
