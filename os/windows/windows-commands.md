@@ -19,7 +19,7 @@ shutdown /r
 
 - Enable safe mode via commandline  
 ```dos
-bcedit /set {default} bootmenupolicy legacy
+bcdedit /set {default} bootmenupolicy legacy
 ```
 - Disable hyper-v  
 ```dos
